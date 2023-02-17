@@ -10,13 +10,14 @@
 
 int main(void)
 {
-	char *p = "abcdefghijklmnopqrstuvwxyz";
-	
-	while (*p)
-	{
-		putchar(*p++);
-	}
+	int i = 97;
 
-	putchar(*p);
+	while (i < 123)
+	{
+		putchar(i);
+		i++;
+	}
+	putchar(10);
+
 	return (0);
 }
