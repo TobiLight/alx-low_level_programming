@@ -19,7 +19,7 @@ int main(void)
 			putchar(i + '0');
 		} else if (i > 41)
 		{
-			putchar(i + 'A');
+			putchar(i - 10 + 'A');
 		}
 		i++;
 	}
