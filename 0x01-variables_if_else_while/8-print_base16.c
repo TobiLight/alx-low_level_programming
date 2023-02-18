@@ -21,7 +21,7 @@ int main(void)
 		{
 			putchar(i + 'A');
 		}
-		i++
+		i++;
 	}
 	putchar(10);
 	return (0);
