@@ -16,12 +16,11 @@ int main(void)
 	{
 		if (i < 10)
 		{
-			putchar(i + 48);
-		} else
+			putchar(i + '0');
+		} else if (i > 41)
 		{
-			putchar(i + 87);
+			putchar(i + 'A');
 		}
-
 		i++
 	}
 	putchar(10);
