@@ -22,7 +22,7 @@ int main(void)
 			putchar(i + 87);
 		}
 
-		putchar(32);
+		i++
 	}
 	putchar(10);
 	return (0);
