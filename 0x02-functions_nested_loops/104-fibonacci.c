@@ -14,10 +14,10 @@ int main(void)
 	for (i = 2, n = 98; i <= n; i++)
 	{
 		c = a + b;
-		printf(", %d", c);
+		printf("%d, ", c);
 		a = b;
 		b = c;
 	}
-	printf("\n");
+	printf("%d\n", a + b);
 	return (0);
 }
