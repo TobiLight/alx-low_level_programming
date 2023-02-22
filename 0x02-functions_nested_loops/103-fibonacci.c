@@ -6,7 +6,7 @@
  * Return: Always 0 (Success)
 */
 
-int main (void)
+int main(void)
 {
 	long int total_sum, sum, first, second;
 
