@@ -38,7 +38,7 @@ void jack_bauer(void)
 			m10++;
 		}
 		m10 = '0';
-		m1++
+		m1++;
 	}
 	h1 = '0';
 	h10++;
