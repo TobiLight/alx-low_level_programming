@@ -11,11 +11,11 @@ int main(void)
 
 	printf("%d, %d, ", a, b);
 
-	for (i = 3, n = 98; i <= n; i++)
+	for (i = 2, n = 98; i <= n; i++)
 	{
-		c = (a + b) % 10;
+		c = a + b;
 		printf(", %d", c);
-		a = b % 10;
+		a = b;
 		b = c;
 	}
 	printf("\n");
