@@ -18,7 +18,7 @@ int main(void)
 		printf("%lu, ", c);
 		a = b;
 		b = c;
-		count++
+		count++;
 	}
 	printf("\n");
 	return (0);
