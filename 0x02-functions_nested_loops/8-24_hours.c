@@ -13,7 +13,7 @@ void jack_bauer(void)
 	int h10, h1, m10, m1, h_max;
 
 	h_max = 58;
-	h1 = '0';
+	h10 = '0';
 	while (h10 < '3')
 	{
 		if (h10 < '2')
