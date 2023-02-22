@@ -16,7 +16,7 @@ void jack_bauer(void)
 	h10 = '0';
 	while (h10 < '3')
 	{
-		if (h10 < '2')
+		if (h10 == '2')
 		{
 			h_max = '4';
 		}
@@ -24,18 +24,22 @@ void jack_bauer(void)
 		while (h1 < h_max)
 		{
 			m10 = '0';
-			while (m1 < 58)
+			while (m10 < '6')
 			{
-				_putchar(h10);
-				_putchar(h1);
-				_putchar(':');
-				_putchar(m10);
-				_putchar(m1);
-				_putchar('\n');
-				m1++;
+				m1 = '0';
+				while (m1 < 58)
+				{
+					_putchar(h10);
+					_putchar(h1);
+					_putchar(':');
+					_putchar(m10);
+					_putchar(m1);
+					_putchar('\n');
+					m1++;
+				}
+				m1 = '0';
+				m10++;
 			}
-			m1 = '0';
-			m10++;
 		}
 		m10 = '0';
 		m1++;
