@@ -23,7 +23,7 @@ int main(void)
 		printf("%li, ", sum);
 		first = second;
 		second = sum;
-		
+
 		count++;
 	}
 	sum = first + second;
