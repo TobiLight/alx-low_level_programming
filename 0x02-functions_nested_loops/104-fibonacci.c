@@ -18,6 +18,6 @@ int main(void)
 		a = b;
 		b = c;
 	}
-	printf("$d\n", a + b);
+	printf("%d\n", a + b);
 	return (0);
 }
