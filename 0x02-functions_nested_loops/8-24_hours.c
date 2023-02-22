@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * jack_bauer: prints every minute of the day
+ * jack_bauer - prints every minute of the day
  *
- * Description: prints every minute of the day of
- * Jack Bauer, starting from 00:00 to 23:59.
+ * Description: prints every minute of the day
  *
  * Return: void
 */
@@ -14,7 +13,7 @@ void jack_bauer(void)
 	int h10, h1, m10, m1, h_max;
 
 	h_max = 58;
-	h1- = '0';
+	h1 = '0';
 	while (h10 < '3')
 	{
 		if (h10 < '2')
