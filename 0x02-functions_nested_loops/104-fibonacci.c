@@ -7,17 +7,19 @@
 
 int main(void)
 {
-	int a = 1, b = 2, c, i, n;
+	unsigned long a = 1, b = 2, c;
+	int count = 2;
 
-	printf("%d, %d, ", a, b);
+	printf("%lu, %lu, ", a, b);
 
-	for (i = 2, n = 98; i <= n; i++)
+	while (count < 98)
 	{
 		c = a + b;
-		printf("%d, ", c);
+		printf("%lu, ", c);
 		a = b;
 		b = c;
+		count++
 	}
-	printf("%d\n", a + b);
+	printf("\n");
 	return (0);
 }
