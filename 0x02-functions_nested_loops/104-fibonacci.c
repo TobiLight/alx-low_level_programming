@@ -5,7 +5,7 @@
  * Return: Always 0 (Success)
 */
 
-int main()
+int main(void)
 {
 	int a = 1, b = 2, c, i;
 
