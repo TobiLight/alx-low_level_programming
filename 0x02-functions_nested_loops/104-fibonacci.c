@@ -10,8 +10,9 @@ int main(void)
 	int a = 1, b = 2, c;
 
 	printf("%d, %d, ", a, b);
+	int i;
 
-	for (int i = 2; i < 98; i++)
+	for (i = 2; i < 98; i++)
 	{
 		c = a + b;
 		printf("%d, ", c);
