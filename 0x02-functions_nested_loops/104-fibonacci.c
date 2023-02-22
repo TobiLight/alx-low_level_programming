@@ -10,7 +10,7 @@ int main(void)
 	unsigned long a = 1, b = 2, c;
 	int count = 2;
 
-	printf("%lu, %lu, ", a, b);
+	printf("%lu%lu, ", a, b);
 
 	while (count < 98)
 	{
