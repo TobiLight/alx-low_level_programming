@@ -13,7 +13,7 @@ int main(void)
 
 	for (i = 3, n = 98; i <= n; i++)
 	{
-		c = a + b % 10;
+		c = (a + b) % 10;
 		printf(", %d", c);
 		a = b % 10;
 		b = c;
