@@ -14,14 +14,12 @@ void print_rev(char *s)
 	/* find the length of character using i */
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		;
 	}
 
 	/* prints char from the last index as i is decremented */
-	while (i >= 0)
+	for (i--; i >= 0; i--)
 	{
 		_putchar(s[i]);
-		i--;
 	}
 
 	_putchar('\n');
