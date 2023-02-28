@@ -18,9 +18,10 @@ void print_rev(char *s)
 	}
 
 	/* prints char from the last index as i is decremented */
-	for (i; i >= 0; i--)
+	while (i >= 0)
 	{
 		_putchar(s[i]);
+		i--;
 	}
 
 	_putchar('\n');
