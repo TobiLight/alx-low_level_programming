@@ -14,7 +14,7 @@ char *_strncpy(char *dest, char *src, int n)
 	char *result = dest;
 	int i;
 
-	/* Loop through n and copy src[i] to dest[i] 
+	/* Loop through n and copy src[i] to dest[i]
 	 * if src[i] doesnt have null byte */
 	for (i = 0; i < n && src[i] != '\0')
 	{
