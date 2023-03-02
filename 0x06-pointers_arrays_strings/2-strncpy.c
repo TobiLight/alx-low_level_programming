@@ -22,12 +22,12 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[i] = src[i];
 	}
 
-	/* Loop through n so that dest can
-	 * have it's remaining characters
-	 * and null byte at the end of it */
+	/* Loop through n again so dest can have
+	 * all it's remaining characters */
 	for (; i < n; i++)
 	{
 		dest[i] = '\0';
 	}
 
 	return (result);
+}
