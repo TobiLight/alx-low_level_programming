@@ -7,7 +7,6 @@
  * @n: n is an integer
  *
  * Return: Pointer
- *
 */
 
 char *_strncat(char *dest, char *src, int n)
@@ -17,7 +16,7 @@ char *_strncat(char *dest, char *src, int n)
 
 	while (*dest != '\0')
 	{
-		 dest++;
+		dest++;
 	}
 
 	while (*src != '\0' && n > 0)
