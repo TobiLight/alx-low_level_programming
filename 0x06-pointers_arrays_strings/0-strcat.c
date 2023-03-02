@@ -10,12 +10,16 @@
 
 char * _strcat(char *dest, char *src)
 {
-	while (*dest)
+	char *result = dest;
+
+	/* Move dest pointer to the end*/
+	while (*dest != '\0')
 	{
 		dest++;
 	}
 
-	while (*src)
+	/* Copy the src string to dest*/
+	while (*src != '\0')
 	{
 		*dest = *src;
 		dest++;
@@ -24,5 +28,5 @@ char * _strcat(char *dest, char *src)
 
 	*dest = '\0';
 
-	return dest;
+	return result;
 }
