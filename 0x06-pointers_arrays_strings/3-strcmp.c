@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _strcmp - compares two strings
  * @s1: s1 is a character
