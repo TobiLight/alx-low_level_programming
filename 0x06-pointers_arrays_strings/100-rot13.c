@@ -20,6 +20,7 @@ char *rot13(char *s)
 			if (s[i] == words[j])
 			{
 				s[i] = words_13[j];
+				break;
 			}
 		}
 	}
