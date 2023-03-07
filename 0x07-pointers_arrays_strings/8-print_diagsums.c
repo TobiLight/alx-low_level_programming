@@ -12,12 +12,14 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, diag1 = 0, diag2 = 0;
+	int i = 0;
+	int diag1 = 0, diag2 = 0;
 
-	for (i = 0; i < size; i++)
+	while (i < size)
 	{
 		diag1 += *(a + i * size + i);
 		diag2 += *(a + i * size + (size - i - 1));
+		i++;
 	}
 
 	printf("%d %d\n", diag1, diag2);
