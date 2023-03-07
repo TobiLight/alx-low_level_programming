@@ -7,4 +7,4 @@
 * **[0x04. C](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x04-more_functions_nested_loops)** - More functions, more nested loops
 * **[0x05. C](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x05-pointers_arrays_strings)** - Pointers, arrays and strings
 * **[0x06. C](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x06-pointers_arrays_strings)** - More pointers, arrays and strings
-* **[0x07. ](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x07-pointers_arrays_strings)C** - Even more pointers, arrays and strings
+* **[0x07. C](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x07-pointers_arrays_strings)** - Even more pointers, arrays and strings
