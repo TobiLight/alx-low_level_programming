@@ -6,7 +6,6 @@
 #include "main.h"
 
 /**
- * Author: TobiLight
  * _puts_recursion - prints a string
  * @s: s is a character
  *
