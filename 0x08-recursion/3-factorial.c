@@ -1,6 +1,6 @@
 /*
  * File: 3-factorial.c
- * Auth: TobiLight
+ * Author: TobiLight
 */
 
 #include "main.h"
