@@ -1,15 +1,16 @@
-/**
+/*
  * File: 3-factorial.c
- * Author: TobiLight
+ * Auth: TobiLight
 */
 
 #include "main.h"
 
 /**
- * factorial - Returns the factorial of a given number
- * @n: n is an integer and the given number
+ * factorial - Returns the factorial of a given number.
+ * @n: n is the number to find the factorial of.
  *
- * Return: Integer
+ * Return: If n > 0 - the factorial of n.
+ *         If n < 0 - 1 to indicate an error.
 */
 
 int factorial(int n)
@@ -29,5 +30,5 @@ int factorial(int n)
 		return (1);
 	}
 
-	return n * factorial(n - 1);
+	return (n * factorial(n - 1));
 }
