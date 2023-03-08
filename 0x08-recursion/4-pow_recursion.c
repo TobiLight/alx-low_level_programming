@@ -7,8 +7,8 @@
 
 /**
  * _pow_recursion -  returns the value of x raised to the power of y.
- * @x: x is an integer
- * @y: y is an integer
+ * @x: x is an integer.
+ * @y: y is an integer.
  *
  * Return: If y < 0 - -1 to indicate an error
  * If y > 0 - pow of x raised to the power of y
