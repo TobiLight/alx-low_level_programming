@@ -1,5 +1,8 @@
 # 0x08. C - Recursion
 
+### This project is about Recursion in C programming language. 
+
+* **[main.h](https://github.com/TobiLight/alx-low_level_programming/blob/main/0x08-recursion/main.h)** - Contains all the function prototypes for each of the task in this project. 
 * **[0-puts_recursion.c](https://github.com/TobiLight/alx-low_level_programming/blob/main/0x08-recursion/0-puts_recursion.c)** - Write a function that prints a string, followed by a new line.
 	* Prototype: ```void _puts_recursion(char *s);```
 
