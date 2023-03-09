@@ -11,7 +11,7 @@ int find_sqrt(int n, int low, int high);
  * find_sqrt - Binary search to find square root of n
  * @n: n is an integer we are finding square root of
  * @low: low is an integer
- * @high is an integer
+ * @high: high is an integer
  *
  * Return: Integer
 */
