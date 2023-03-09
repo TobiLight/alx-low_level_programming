@@ -17,11 +17,12 @@ int is_palindrome_helper(char *s, int len, int index);
 
 int find_strlen(char *s)
 {
-	int len;
+	int len = 0;
 
-	for (len = 0; *s != '\0'; s++)
+	if (*(s + len))
 	{
 		len++;
+		len += find_strlen(s + len);
 	}
 
 	return (len);
