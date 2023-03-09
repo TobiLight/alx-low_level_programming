@@ -1,6 +1,6 @@
 /*
  * File: 2-strlen_recursion.c
- * Auth: TobiLight
+ * Author: TobiLight
 */
 
 #include "main.h"

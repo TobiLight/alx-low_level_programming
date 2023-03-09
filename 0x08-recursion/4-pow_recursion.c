@@ -1,5 +1,5 @@
 /*
- * File: 4-pow_recursion
+ * File: 4-pow_recursion.c
  * Author: TobiLight
 */
 
