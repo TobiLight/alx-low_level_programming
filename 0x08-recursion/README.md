@@ -24,3 +24,7 @@
 
 * **[6-is_prime_number.c](https://github.com/TobiLight/alx-low_level_programming/blob/main/0x08-recursion/6-is_prime_number.c)** - Write a function that returns ```1``` if the input integer is a prime number, otherwise return ```0```.
 	* Prototype: ```int is_prime_number(int n);```
+
+* **[100-is_palindrome.c](https://github.com/TobiLight/alx-low_level_programming/blob/main/0x08-recursion/100-is_palindrome.c)** - Write a function that returns ```1``` if a string is a palindrome and ```0``` if not.
+	* Prototype: ```int is_palindrome(char *s);```
+	* An empty string is a palindrome
