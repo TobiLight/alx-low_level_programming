@@ -5,8 +5,8 @@
  * File: main.h
  * Auhtor: TobiLight
  * Description: Header file that contains or the
- * 		prototypes of all the functions included
- * 		in the static library libmy.a
+ *              prototypes of all the functions included
+ *              in the static library libmy.a
 */
 
 int _putchar(char c);
