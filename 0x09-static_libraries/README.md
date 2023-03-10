@@ -1,6 +1,6 @@
 # 0x09. C - Static Libraries
 
-## Tasks :page_with_curl:
+## Tasks
 
 * **0. A library is not a luxury but one of the necessities of life**
   * [libmy.a](./libmy.a): C Static library containing all the functions
