@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /*
- * File: 2-args.c
+ * File: 3-mul.c
  * Author: TobiLight
 */
 
@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	arg1 = atof(argv[1]);
-	arg2 = atof(argv[2]);
+	arg1 = atoi(argv[1]);
+	arg2 = atoi(argv[2]);
 
 	result = arg1 * arg2;
 
