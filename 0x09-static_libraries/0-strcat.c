@@ -2,7 +2,7 @@
 
 /**
  * _strcat - concatenates two strings.
- * @dest: dest is a strubg
+ * @dest: dest is a string
  * @src: src is a string (appended word)
  *
  * Return: Pointer (dest)
