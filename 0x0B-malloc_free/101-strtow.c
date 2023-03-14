@@ -40,66 +40,52 @@ int word_count(char *str)
  * Return: Pointer (str[])
 */
 
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+char **strtow(char *str)
+{
+        char **words;
+        int num_words = 0, i = 0, j = 0, k = 0;
 
-char **strtow(char *str) {
-	char **words;
-	int word_start = 0;
-	int word_end = 0;
-	int num_words, word_len = 0;
-	int i = 0, j;
-	
-	if (str == NULL || *str == '\0') {
-	return NULL;
-	}
+        if (str == NULL || *str == '\0')
+                return (NULL);
 
-	/* count the number of words in the input string */
-	for (i = 0; str[i] != '\0'; i++) {
-	if (!isspace(str[i])) {
-	    num_words++;
-	    while (!isspace(str[i]) && str[i] != '\0') {
-		i++;
-	    }
-	}
-	}
+        while (str[i] != '\0')
+        {
+                if (!isspace(str[i]))
+                {
+                        num_words++;
+                        while (!isspace(str[i]) && str[i] != '\0')
+                                i++;
+                }
+                else
+                        i++;
+        }
 
-	/* allocate memory for array of pointers to strings */
-	words = malloc((num_words + 1) * sizeof(char*));
-	if (words == NULL) {
-	return NULL;
-	}
+        if (num_words == 0)
+                return (NULL);
 
-	/* add each word to the array */
-	
-	while (str[i] != '\0' && num_words > 0) {
-	if (!isspace(str[i])) {
-	    word_start = i;
-	    while (!isspace(str[i]) && str[i] != '\0') {
-		i++;
-	    }
-	    word_end = i;
-	    word_len = word_end - word_start;
-	    words[num_words - 1] = malloc((word_len + 1) * sizeof(char));
-	    if (words[num_words - 1] == NULL) {
-		/* free memory for all previously allocated words and the array */
-		for (j = num_words; j <= 0; j--) {
-		    free(words[j - 1]);
-		}
-		free(words);
-		return NULL;
-	    }
-	    strncpy(words[num_words - 1], str + word_start, word_len);
-	    words[num_words - 1][word_len] = '\0';
-	    num_words--;
-	} else {
-	    i++;
-	}
-	}
+        words = malloc((num_words + 1) * sizeof(char *));
+        if (words == NULL)
+                return (NULL);
 
-	/* add a null pointer to the end of the array to indicate the end of the list */
-	words[0] = NULL;
+        for (i = 0; i < num_words; i++)
+        {
+                while (isspace(str[j]))
+                        j++;
+                k = j;
+                while (!isspace(str[j]) && str[j] != '\0')
+                        j++;
+                words[i] = malloc((j - k + 1) * sizeof(char));
+                if (words[i] == NULL)
+                {
+                        while (i-- > 0)
+                                free(words[i]);
+                        free(words);
+                        return (NULL);
+                }
+                strncpy(words[i], str + k, j - k);
+                words[i][j - k] = '\0';
+        }
+        words[i] = NULL;
 
-	return words;
+        return (words);
 }
