@@ -42,44 +42,41 @@ int word_count(char *str)
 
 char **strtow(char *str)
 {
-	char **strings;
-	int index = 0, words, w, letters, l;
+	int i, j, k, n = strlen(str);
+	char **words = malloc((n/2) * sizeof(char*));
 
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
-
-	words = word_count(str);
-	if (words == 0)
-		return (NULL);
-
-	strings = malloc(sizeof(char *) * (words + 1));
-	if (strings == NULL)
-		return (NULL);
-
-	for (w = 0; w < words; w++)
+	for (i = 0, j = 0; i < n; i = k + 1)
 	{
-		while (str[index] == ' ')
-			index++;
-
-		letters = word_len(str + index);
-
-		strings[w] = malloc(sizeof(char) * (letters + 1));
-
-		if (strings[w] == NULL)
+		while (i < n && str[i] == ' ')
 		{
-			for (; w >= 0; w--)
-				free(strings[w]);
-
-			free(strings);
-			return (NULL);
+			i++;
 		}
 
-		for (l = 0; l < letters; l++)
-			strings[w][l] = str[index++];
+		if (i == n)
+			break;
 
-		strings[w][l] = '\0';
+		k = i;
+
+		while (k < n && str[k] != ' ')
+		{
+			k++;
+		}
+		char *word = malloc((k-i+1) * sizeof(char));
+
+		if (word == NULL)
+		{
+			for (j = 0; j < i; j++)
+			{
+				free(words[j]);
+			}
+			free(words);
+			return (NULL);
+		}
+		strncpy(word, str+i, k-i);
+		word[k-i] = '\0';
+		words[j++] = word;
 	}
-	strings[w] = NULL;
-
-	return (strings);
+	words = realloc(words, (j+1) * sizeof(char*));
+	words[j] = NULL;
+	return (words);
 }
