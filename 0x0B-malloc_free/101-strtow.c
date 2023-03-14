@@ -76,7 +76,10 @@ char **strtow(char *str)
 		word[k - i] = '\0';
 		words[j++] = word;
 	}
-	words = realloc(words, (j + 1) * sizeof(char *));
+	if (j >= (n / 2) + 1)
+	{
+		return (words);
+	}
 	words[j] = NULL;
 	return (words);
 }
