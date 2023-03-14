@@ -9,7 +9,6 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAX_WORD_LENGTH 100
 
 /**
  * word_count - return word count
@@ -43,48 +42,44 @@ int word_count(char *str)
 
 char **strtow(char *str)
 {
-	int i, num_words = 0, word_index = 0, word_length = 0;
-	char **words, *word;
+	char **strings;
+	int index = 0, words, w, letters, l;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
-	num_words = word_count(str);
-
-	words = (char **) malloc((num_words + 1) * sizeof(char *));
-
-	if (words == NULL)
+	words = word_count(str);
+	if (words == 0)
 		return (NULL);
 
-	word = strtok(str, " ");
+	strings = malloc(sizeof(char *) * (words + 1));
+	if (strings == NULL)
+		return (NULL);
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (w = 0; w < words; w++)
 	{
-		if (!isspace(str[i]))
-		{
-			if (word_length == 0)
-			{
-				words[word_index] = (char *) malloc(MAX_WORD_LENGTH * sizeof(char));
-				if (words[word_index] == NULL)
-				{
-					free(words);
-					return (NULL);
-				}
-			}
-			words[word_index][word_length++] = str[i];
-		}
-		else if (word_length != 0)
-		{
-			words[word_index++][word_length] = '\0';
-			word_length = 0;
-		}
-	}
+		while (str[index] == ' ')
+			index++;
 
-	if (word_length != 0)
-	{
-		words[word_index++][word_length] = '\0';
-	}
-	words[word_index] = NULL;
+		letters = word_len(str + index);
 
-	return (words);
+		strings[w] = malloc(sizeof(char) * (letters + 1));
+
+		if (strings[w] == NULL)
+		{
+			for (; w >= 0; w--)
+				free(strings[w]);
+
+			free(strings);
+			return (NULL);
+		}
+
+		for (l = 0; l < letters; l++)
+			strings[w][l] = str[index++];
+
+		strings[w][l] = '\0';
+	}
+	strings[w] = NULL;
+
+	return (strings);
 }
