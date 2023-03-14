@@ -21,12 +21,15 @@ char *create_array(unsigned int size, char c)
 	unsigned int i = 0;
 	char *arr = malloc(size * sizeof(c));
 
+	/* Return NULL if size is 0 */
 	if (size == 0)
 		return (NULL);
 
+	/* Return NULL if allocation fails */
 	if (arr == NULL)
 		return (NULL);
 
+	/* Fill the array with char C */
 	while (size != 0)
 	{
 		arr[i] = c;
