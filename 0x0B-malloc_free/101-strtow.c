@@ -48,6 +48,7 @@ char **strtow(char *str) {
 	char **words;
 	int word_start = 0;
 	int word_end = 0;
+	int num_words = 0;
 	int i = 0, j;
 	
 	if (str == NULL || *str == '\0') {
