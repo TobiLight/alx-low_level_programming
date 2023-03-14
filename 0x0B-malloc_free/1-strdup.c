@@ -31,6 +31,9 @@ char *_strdup(char *str)
 	/* Allocate memory for new_str */
 	new_str = malloc((str_len + 1) * sizeof(char));
 
+	if (new_str == NULL)
+		return (NULL);
+
 	/* copy str int new_str */
 	strcpy(new_str, str);
 
