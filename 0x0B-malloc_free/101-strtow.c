@@ -55,7 +55,7 @@ char **strtow(char *str) {
 	}
 
 	/* count the number of words in the input string */
-	for (int i = 0; str[i] != '\0'; i++) {
+	for (i = 0; str[i] != '\0'; i++) {
 	if (!isspace(str[i])) {
 	    num_words++;
 	    while (!isspace(str[i]) && str[i] != '\0') {
