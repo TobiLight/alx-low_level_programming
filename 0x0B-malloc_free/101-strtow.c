@@ -76,14 +76,14 @@ char **strtow(char *str)
 		}
 	}
 
-	if (word_start < strlen(str))
+	if (word_start < (int)strlen(str))
 	{
 		words[num_words] = malloc((strlen(str) - word_start + 1) * sizeof(char));
 		if (words[num_words] == NULL)
 		{
 			for (k = 0; k < num_words; k++)
 			{
-				free(words[j]);
+				free(words[k]);
 			}
 			free(words);
 			return (NULL);
