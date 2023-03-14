@@ -77,6 +77,7 @@ char **strtow(char *str)
 			word_length = 0;
 		}
 	}
+
 	if (word_length != 0)
 	{
 		words[word_index++][word_length] = '\0';
