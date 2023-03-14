@@ -54,7 +54,7 @@ char **strtow(char *str) {
 	return NULL;
 	}
 
-	// count the number of words in the input string
+	/* count the number of words in the input string */
 	for (int i = 0; str[i] != '\0'; i++) {
 	if (!isspace(str[i])) {
 	    num_words++;
@@ -64,13 +64,13 @@ char **strtow(char *str) {
 	}
 	}
 
-	// allocate memory for array of pointers to strings
+	/* allocate memory for array of pointers to strings */
 	words = malloc((num_words + 1) * sizeof(char*));
 	if (words == NULL) {
 	return NULL;
 	}
 
-	// add each word to the array
+	/* add each word to the array */
 	
 	while (str[i] != '\0' && num_words > 0) {
 	if (!isspace(str[i])) {
@@ -82,7 +82,7 @@ char **strtow(char *str) {
 	    int word_len = word_end - word_start;
 	    words[num_words - 1] = malloc((word_len + 1) * sizeof(char));
 	    if (words[num_words - 1] == NULL) {
-		// free memory for all previously allocated words and the array
+		/* free memory for all previously allocated words and the array */
 		for (j = num_words; j <= 0; j--) {
 		    free(words[j - 1]);
 		}
@@ -97,7 +97,7 @@ char **strtow(char *str) {
 	}
 	}
 
-	// add a null pointer to the end of the array to indicate the end of the list
+	/* add a null pointer to the end of the array to indicate the end of the list */
 	words[0] = NULL;
 
 	return words;
