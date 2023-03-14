@@ -42,50 +42,50 @@ int word_count(char *str)
 
 char **strtow(char *str)
 {
-        char **words;
-        int num_words = 0, i = 0, j = 0, k = 0;
+	char **words;
+	int num_words = 0, i = 0, j = 0, k = 0;
 
-        if (str == NULL || *str == '\0')
-                return (NULL);
+	if (str == NULL || *str == '\0')
+		return (NULL);
 
-        while (str[i] != '\0')
-        {
-                if (!isspace(str[i]))
-                {
-                        num_words++;
-                        while (!isspace(str[i]) && str[i] != '\0')
-                                i++;
-                }
-                else
-                        i++;
-        }
+	while (str[i] != '\0')
+	{
+		if (!isspace(str[i]))
+		{
+			num_words++;
+			while (!isspace(str[i]) && str[i] != '\0')
+				i++;
+		}
+		else
+			i++;
+	}
 
-        if (num_words == 0)
-                return (NULL);
+	if (num_words == 0)
+		return (NULL);
 
-        words = malloc((num_words + 1) * sizeof(char *));
-        if (words == NULL)
-                return (NULL);
+	words = malloc((num_words + 1) * sizeof(char *));
+	if (words == NULL)
+		return (NULL);
 
-        for (i = 0; i < num_words; i++)
-        {
-                while (isspace(str[j]))
-                        j++;
-                k = j;
-                while (!isspace(str[j]) && str[j] != '\0')
-                        j++;
-                words[i] = malloc((j - k + 1) * sizeof(char));
-                if (words[i] == NULL)
-                {
-                        while (i-- > 0)
-                                free(words[i]);
-                        free(words);
-                        return (NULL);
-                }
-                strncpy(words[i], str + k, j - k);
-                words[i][j - k] = '\0';
-        }
-        words[i] = NULL;
+	for (i = 0; i < num_words; i++)
+	{
+		while (isspace(str[j]))
+			j++;
+		k = j;
+		while (!isspace(str[j]) && str[j] != '\0')
+			j++;
+		words[i] = malloc((j - k + 1) * sizeof(char));
+		if (words[i] == NULL)
+		{
+			while (i-- > 0)
+				free(words[i]);
+			free(words);
+			return (NULL);
+		}
+		strncpy(words[i], str + k, j - k);
+		words[i][j - k] = '\0';
+	}
+	words[i] = NULL;
 
-        return (words);
+	return (words);
 }
