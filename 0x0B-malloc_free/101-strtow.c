@@ -43,7 +43,8 @@ int word_count(char *str)
 char **strtow(char *str)
 {
 	int i, j, k, n = strlen(str);
-	char **words = malloc((n/2) * sizeof(char*));
+	char **words = malloc((n / 2) * sizeof(char *));
+	char *word;
 
 	for (i = 0, j = 0; i < n; i = k + 1)
 	{
@@ -61,8 +62,7 @@ char **strtow(char *str)
 		{
 			k++;
 		}
-		char *word = malloc((k-i+1) * sizeof(char));
-
+		word = malloc((k - i + 1) * sizeof(char));
 		if (word == NULL)
 		{
 			for (j = 0; j < i; j++)
@@ -72,11 +72,11 @@ char **strtow(char *str)
 			free(words);
 			return (NULL);
 		}
-		strncpy(word, str+i, k-i);
-		word[k-i] = '\0';
+		strncpy(word, str + i, k - i);
+		word[k - i] = '\0';
 		words[j++] = word;
 	}
-	words = realloc(words, (j+1) * sizeof(char*));
+	words = realloc(words, (j + 1) * sizeof(char *));
 	words[j] = NULL;
 	return (words);
 }
