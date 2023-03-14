@@ -43,7 +43,7 @@ int word_count(char *str)
 
 char **strtow(char *str)
 {
-	int num_words = 0, word_index = 0, word_length = 0;
+	int i, num_words = 0, word_index = 0, word_length = 0;
 	char **words;
 
 	if (str == NULL || *str == '\0')
@@ -56,9 +56,7 @@ char **strtow(char *str)
 	if (words == NULL)
 		return (NULL);
 
-	i = 0;
-
-	for (i = 0; i < str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (!isspace(str[i]))
 		{
