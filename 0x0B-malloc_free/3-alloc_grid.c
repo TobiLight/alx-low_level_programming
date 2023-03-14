@@ -23,9 +23,7 @@ int **alloc_grid(int width, int height)
 
 	/* return null if width or height is less than 0 */
 	if (width <= 0 || height <= 0)
-	{
 		return (NULL);
-	}
 
 	/* Allocate space for our pointer to pointer of integer */
 	grid = malloc(height * sizeof(int *));
@@ -37,7 +35,6 @@ int **alloc_grid(int width, int height)
 	while (i < height)
 	{
 		grid[i] = (int *)malloc(width * sizeof(int));
-
 		/* Check if grid is null */
 		if (grid[i] == NULL)
 		{
@@ -50,7 +47,6 @@ int **alloc_grid(int width, int height)
 			free(grid);
 			return (NULL);
 		}
-
 		while (k < width)
 		{
 			grid[i][k] = 0;
