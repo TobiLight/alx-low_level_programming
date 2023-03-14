@@ -12,6 +12,29 @@
 #define MAX_WORD_LENGTH 100
 
 /**
+ * word_count - return word count
+ * @str: string to be counted
+ *
+ * Return: Integer
+*/
+
+int word_count(char *str);
+
+int word_count(char *str)
+{
+	int i = 0, word_count = 0;
+
+	for (i = 0; i < str[i] != '\0'; i++)
+	{
+		if (!isspace(str[i]) && (i == 0 || isspace(str[i - 1])))
+		{
+			word_count++;
+		}
+	}
+	return (word_count);
+}
+
+/**
  * strtow - splits a string into words
  * @str: string to be splitted
  *
@@ -23,16 +46,10 @@ char **strtow(char *str)
 	int num_words = 0, word_index = 0, word_length = 0;
 	char **words;
 
-	if (str == NULL || *str = '\0')
+	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	for (i = 0; i < str[i] != '\0'; i++)
-	{
-		if (!isspace(str[i]) && (i == 0 || isspace(str[i - 1])))
-		{
-			num_words++;
-		}
-	}
+	num_words = word_count(str);
 
 	words = (char **) malloc((num_words + 1) * sizeof(char *));
 
