@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 
 	/* Allocate memory to new_str */
 	new_str = malloc((len1 + len2 + 1) * sizeof(char));
-	
+
 	if (new_str == NULL)
 		return (NULL);
 
