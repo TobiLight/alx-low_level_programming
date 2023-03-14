@@ -29,7 +29,7 @@ char *_strdup(char *str)
 	str_len = strlen(str);
 
 	/* Allocate memory for new_str */
-	new_str = malloc(str_len + 1);
+	new_str = malloc((str_len + 1) * sizeof(char));
 
 	/* copy str int new_str */
 	strcpy(new_str, str);
