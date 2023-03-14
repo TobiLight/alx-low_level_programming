@@ -42,44 +42,56 @@ int word_count(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, k, n = strlen(str);
-	char **words = malloc((n / 2) * sizeof(char *));
-	char *word;
+	int i, j, k, num_words = 0, word_start = 0;
+	char **words;
 
-	for (i = 0, j = 0; i < n; i = k + 1)
+	if (str == NULL || *str == '\0')
 	{
-		while (i < n && str[i] == ' ')
+		return (NULL);
+	}
+
+	words = malloc(strlen(str) * sizeof(char*));
+	if (words == NULL)
+		return (NULL);
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (isspace(str[i]) && i > word_start)
 		{
-			i++;
+			words[num_words] = malloc((i - word_start + 1) * sizeof(char));
+			if (words[num_words] == NULL)
+			{
+				for (j = 0; j < num_words; j++)
+				{
+					free(words[j]);
+				}
+				free(words);
+				return (NULL);
+			}
+
+			strncpy(words[num_words], str + word_start, i - word_start);
+			words[num_words][i - word_start] = '\0';
+			num_words++;
+			word_start = i + 1;
 		}
+	}
 
-		if (i == n)
-			break;
-
-		k = i;
-
-		while (k < n && str[k] != ' ')
+	if (word_start < strlen(str))
+	{
+		words[num_words] = malloc((strlen(str) - word_start + 1) * sizeof(char));
+		if (words[num_words] == NULL)
 		{
-			k++;
-		}
-		word = malloc((k - i + 1) * sizeof(char));
-		if (word == NULL)
-		{
-			for (j = 0; j < i; j++)
+			for (k = 0; k < num_words; k++)
 			{
 				free(words[j]);
 			}
 			free(words);
 			return (NULL);
 		}
-		strncpy(word, str + i, k - i);
-		word[k - i] = '\0';
-		words[j++] = word;
+		strncpy(words[num_words], str + word_start, strlen(str) - word_start);
+		words[num_words][strlen(str) - word_start] = '\0';
+		num_words++;
 	}
-	if (j >= (n / 2) + 1)
-	{
-		return (words);
-	}
-	words[j] = NULL;
+	words[num_words] = NULL;
 	return (words);
 }
