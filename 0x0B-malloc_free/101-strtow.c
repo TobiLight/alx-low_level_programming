@@ -48,7 +48,7 @@ char **strtow(char *str) {
 	char **words;
 	int word_start = 0;
 	int word_end = 0;
-	int num_words = 0;
+	int num_words, word_len = 0;
 	int i = 0, j;
 	
 	if (str == NULL || *str == '\0') {
@@ -80,7 +80,7 @@ char **strtow(char *str) {
 		i++;
 	    }
 	    word_end = i;
-	    int word_len = word_end - word_start;
+	    word_len = word_end - word_start;
 	    words[num_words - 1] = malloc((word_len + 1) * sizeof(char));
 	    if (words[num_words - 1] == NULL) {
 		/* free memory for all previously allocated words and the array */
