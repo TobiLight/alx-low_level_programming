@@ -18,35 +18,34 @@
 
 char *argstostr(int ac, char **av)
 {
-	char *new_str;
-	int i, j, length = 0, index = 0;
+	char *str;
+	int arg, byte, index, size = ac;
 
-	/* return null if ac is o or av is null */
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	/* get the length of all args and add 1 for newline char */
-	for (i = 0; i < ac; i++)
+	for (arg = 0; arg < ac; arg++)
 	{
-		length += strlen(av[i]) + 1;
+		for (byte = 0; av[arg][byte]; byte++)
+			size++;
 	}
 
-	/* allocate memory to new_str */
-	new_str = (char *)malloc(length * sizeof(char ));
+	str = malloc(sizeof(char) * size + 1);
 
-	/* check if new_str is not null */
-	if (new_str == NULL)
+	if (str == NULL)
 		return (NULL);
 
-	/* copy the string and add a new line */
-	for (j = 0; j < ac; j++)
+	index = 0;
+
+	for (arg = 0; arg < ac; arg++)
 	{
-		strcpy(new_str + index, av[j]);
-		index += strlen(av[j]);
-		new_str[index++] = '\n';
+		for (byte = 0; av[arg][byte]; byte++)
+			str[index++] = av[arg][byte];
+
+		str[index++] = '\n';
 	}
 
-	/* replace the last new line with null char */
-	new_str[length] = '\0';
-	return (new_str);
+	str[size] = '\0';
+
+	return (str);
 }

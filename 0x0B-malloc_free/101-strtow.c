@@ -44,7 +44,7 @@ int word_count(char *str)
 char **strtow(char *str)
 {
 	int i, num_words = 0, word_index = 0, word_length = 0;
-	char **words;
+	char **words, *word;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
@@ -55,6 +55,8 @@ char **strtow(char *str)
 
 	if (words == NULL)
 		return (NULL);
+
+	word = strtok(str, " ");
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
