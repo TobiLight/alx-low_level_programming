@@ -13,7 +13,7 @@
  * @size: size of array
  * @c: character
  *
- * Return: Pointer (char) if not NULL
+ * Return: Pointer (char[]) else NULL
 */
 
 char *create_array(unsigned int size, char c)
