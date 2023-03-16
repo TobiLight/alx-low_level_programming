@@ -1,4 +1,4 @@
-/* 
+/*
  * File: 0-malloc_checked.c
  * Author: TobiLight
 */
