@@ -10,7 +10,7 @@
  * malloc_checked - allocates memory using malloc
  * @b: size of bytes to allocate
  *
- * Return: nothing
+ * Return: Pointer to the allocated memory
 */
 
 void *malloc_checked(unsigned int b)
