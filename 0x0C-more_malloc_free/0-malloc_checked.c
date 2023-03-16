@@ -8,7 +8,7 @@
 
 /**
  * malloc_checked - allocates memory using malloc
- * @b: size of integer to allocate
+ * @b: size of bytes to allocate
  *
  * Return: nothing
 */
