@@ -34,7 +34,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	char_ptr = ptr;
 	for (i = 0; i < total_elem; i++)
 	{
-		*(char_ptr + 1) = 0;
+		char_ptr[i] = 0;
 	}
 
 	return (ptr);
