@@ -20,3 +20,10 @@ This projecy is focused on the use of malloc and free.
 	* The memory is set to zero
 	* If `nmemb` or `size` is `0`, then `_calloc` returns `NULL`
 	* If `malloc` fails, then `_calloc` returns `NULL`
+
+* **[3-array_range.c](./3-array_range.c)** - Write a function that creates an array of integers.
+	* Prototype: `int *array_range(int min, int max);
+	* The array created should contain all the values from `min` (included) to `max` (included), ordered from `min` to `max`
+	* Return: the pointer to the newly created array
+	* If `min` > `max`, return `NULL`
+	* If `malloc` fails, return `NULL`
