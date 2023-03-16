@@ -12,3 +12,6 @@ This repository contains programs written for the low-level programming and algo
 * **[0x07. C](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x07-pointers_arrays_strings)** - Even more pointers, arrays and strings
 * **[0x08. C](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x08-recursion)** - Recursion
 * **[0x09. C](./0x09-static_libraries)** - Static Libraries
+* **[0x0A. C](./0x0A-argc_argv)** - Argc, Argv
+* **[0x0B. C](./0x0B-malloc_free)** - Malloc, Free
+* **[0x0C. C](./0x0C-more_malloc_free)** - More Malloc, Free
