@@ -9,29 +9,52 @@
 #include <string.h>
 #include <ctype.h>
 
-int get_num_len(char *num);
-int *multiply(char *num1, char *num2);
+int _isdigit(char c);
+int _atoi(char *s);
 
 /**
- * get_num_len - Computes the length of a string of digits
- * @num: A pointer to a string of digits
- * Return: The length of the string, or -1 if the string contains non-digits
-*/
-int get_num_len(char *num)
+ * _isdigit - checks if a character is a digit
+ * @c: the character to check
+ *
+ * Return: 1 if c is a digit, 0 otherwise
+ */
+int _isdigit(char c)
 {
-	int len = 0;
+	return (c >= '0' && c <= '9');
+}
 
-	while (*num != '\0')
+/**
+ * _atoi - converts a string to an integer
+ * @s: the string to convert
+ *
+ * Return: the integer value of the string
+ */
+int _atoi(char *s)
+{
+	int i, res;
+
+	res = 0;
+	for (i = 0; s[i] != '\0'; ++i)
 	{
-		if (*num < '0' || *num > '9')
+		if (!_isdigit(s[i]))
 		{
-			return (-1);
+			printf("Error\n");
+			exit(98);
 		}
-		len++;
-		num++;
+		res = res * 10 + s[i] - '0';
 	}
+	return (res);
+}
 
-	return (len);
+/**
+ * print_number - prints an integer
+ * @n: the integer to print
+ */
+void print_number(int n)
+{
+	if (n / 10)
+		print_number(n / 10);
+	_putchar(n % 10 + '0');
 }
 
 /**
@@ -40,78 +63,19 @@ int get_num_len(char *num)
  * @num2: A pointer to the second number
  * Return: A pointer to an array containing the product
 */
-int *multiply(char *num1, char *num2)
+int main(int argc, char **argv)
 {
-	int len1 = get_num_len(num1);
-	int len2 = get_num_len(num2);
-	int *result = calloc(len1 + len2, sizeof(int));
-	int carry, num1_digit, num2_digit, sum, i, j;
-
-	if (result == NULL)
-	{
-		return (NULL);
-	}
-
-	for (i = len1 - 1; i >= 0; i--)
-	{
-		carry = 0;
-		num1_digit = num1[i] - '0';
-
-		for (j = len2 - 1; j >= 0; j--)
-		{
-			num2_digit = num2[j] - '0';
-			sum = num1_digit * num2_digit + result[i + j + 1] + carry;
-			carry = sum / 10;
-			result[i + j + 1] = sum % 10;
-		}
-
-		if (carry > 0)
-		{
-			result[i] += carry;
-		}
-	}
-	return (result);
-}
-
-/**
- * main - Entry point. Multiplies two positive numbers
- * @argc: The number of arguments
- * @argv: An array of pointers to the arguments
- * Return: 0 on success, 98 on failure
- */
-int main(int argc, char *argv[])
-{
-	int *result, i;
+	int num1, num2;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
-		exit(98);
+	return (98);
 	}
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
 
-	if (get_num_len(argv[1]) == -1 || get_num_len(argv[2]) == -1)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	result = multiply(argv[1], argv[2]);
-
-	for (i = 0; i < get_num_len(argv[1]) + get_num_len(argv[2]); i++)
-	{
-		if (result[i] != 0 || i == get_num_len(argv[1]) + get_num_len(argv[2]) - 1)
-		{
-			break;
-		}
-	}
-
-	i = 0;
-	for (i = 0; i < get_num_len(argv[1]) + get_num_len(argv[2]); i++)
-	{
-		_putchar(result[i] + '0');
-	}
-
-	_putchar('\n');
-	free(result);
+	print_number(num1 * num2);
+	putchar('\n');
 	return (0);
 }
