@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 {
 	unsigned int num1, num2, result;
 	int i, j;
-	
+
 	if (argc != 3)
 	{
 		printf("Error\n");
