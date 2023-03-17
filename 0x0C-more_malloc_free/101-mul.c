@@ -3,6 +3,7 @@
  * Author: TobiLight
 */
 
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -81,8 +82,8 @@ int main(int argc, char **argv)
 	}
 	while (i < len1 + len2)
 	{
-		putchar(result[i++] + '0');
-		putchar('\n');
+		_putchar(result[i++] + '0');
+		_putchar('\n');
 	}
 
 	/* Free memory */
