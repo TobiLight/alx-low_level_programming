@@ -52,7 +52,7 @@ int *multiply(char *num1, char *num2)
 		return (NULL);
 	}
 
-	for (int i = len1 - 1; i >= 0; i--)
+	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
 		num1_digit = num1[i] - '0';
