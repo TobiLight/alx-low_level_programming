@@ -10,6 +10,80 @@
 #include <ctype.h>
 
 /**
+ * _isdigit - checks if a character is a digit
+ * @c: the character to check
+ *
+ * Return: 1 if c is a digit, 0 otherwise
+*/
+int _isdigit(char c)
+{
+	return c >= '0' && c <= '9';
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: the string to check
+ *
+ * Return: the length of s
+*/
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s)
+	{
+		len++;
+		s++;
+	}
+
+	return len;
+}
+
+/**
+ * print_error - prints an error message to stdout and exits with a status of 98
+*/
+void print_error(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+/**
+ * mul - multiplies two positive numbers
+ * @num1: the first number
+ * @num2: the second number
+*/
+char *multiply(char *num1, int len1, char *num2, int len2)
+{
+	int i, j, carry = 0, product;
+	char *result;
+
+	result = malloc(len1 + len2 + 1);
+	if (!result)
+		return (NULL);
+
+	for (i = 0; i < len1 + len2; i++)
+	{
+		result[i] = '0';
+	}
+  result[i] = '\0';
+
+	for (i = len1 - 1; i >= 0; i--)
+	{
+		carry = 0;
+		for (j = len2 - 1; j >= 0; j--)
+		{
+			product = (num1[i] - '0') * (num2[j] - '0') + carry + (result[i + j + 1] - '0');
+			carry = product / 10;
+			result[i + j + 1] = (product % 10) + '0';
+		}
+		result[i + j + 1] += carry;
+	}
+
+	return (result);
+}
+
+/**
  * main - multiplies two positive numbers
  * @argc: number of arguments
  * @argv: array of arguments
@@ -30,60 +104,34 @@ int main(int argc, char *argv[])
 	num1 = argv[1];
 	num2 = argv[2];
 
-	while (num1[len1])
+	if (!_isdigit(num1) || !_isdigit(num2))
 	{
-		if (num1[len1] < '0' || num1[len1] > '9')
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		len1++;
+		printf("Error\n");
+		return (98);
 	}
 
-	while (num2[len2])
-	{
-		if (num2[len2] < '0' || num2[len2] > '9')
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		len2++;
-	}
+	len1 = strlen(num1);
+	len2 = strlen(num2);
 
-	result = malloc(len1 + len2 + 1);
+	result = multiply(num1, len1, num2, len2);
+
 	if (!result)
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
-
-	for (i = 0; i < len1 + len2; i++)
-	{
-		result[i] = '0';
-	}
-	result[i] = '\0';
-
-	for (i = len1 - 1; i >= 0; i--)
-	{
-		carry = 0;
-		for (j = len2 - 1; j >= 0; j--)
-		{
-			product = (num1[i] - '0') * (num2[j] - '0') + carry + (result[i + j + 1] - '0');
-			carry = product / 10;
-			result[i + j + 1] = (product % 10) + '0';
-		}
-		result[i + j + 1] += carry;
-	}
-
+	
 	i = 0;
 	while (result[i] == '0')
 	{
 		i++;
 	}
+	
 	if (result[i] == '\0')
 	{
 		_putchar('0');
 		_putchar('\n');
+		free(result);
 		return (0);
 	}
 
@@ -92,6 +140,7 @@ int main(int argc, char *argv[])
 		_putchar(result[i]);
 		i++;
 	}
+	
 	_putchar('\n');
 
 	free(result);
