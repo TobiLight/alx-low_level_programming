@@ -16,77 +16,84 @@
  * Return: 0 on success, 98 on error
 */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int i, j, k, carry, len1, len2, *result;
-	char *num1, *num2;
+	int i, j, len1 = 0, len2 = 0, carry = 0, product;
+	char *num1, *num2, *result;
 
-	/* Check if number of arguments is correct */
 	if (argc != 3)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
 
-	/* Check if num1 is composed of digits */
 	num1 = argv[1];
-	len1 = strlen(num1);
-	for (i = 0; i < len1; i++)
-	{
-		if (!isdigit(num1[i]))
-		{
-		    printf("Error\n");
-		    return (98);
-		}
-	}
-
-	/* Check if num2 is composed of digits */
 	num2 = argv[2];
-	len2 = strlen(num2);
-	for (i = 0; i < len2; i++)
+
+	while (num1[len1])
 	{
-		if (!isdigit(num2[i]))
+		if (num1[len1] < '0' || num1[len1] > '9')
 		{
-		    printf("Error\n");
-		    return (98);
+			printf("Error\n");
+			exit(98);
 		}
+		len1++;
 	}
 
-	/* Allocate memory for result */
-	result = calloc(len1 + len2, sizeof(int));
-	if (result == NULL)
+	while (num2[len2])
+	{
+		if (num2[len2] < '0' || num2[len2] > '9')
+		{
+			printf("Error\n");
+			exit(98);
+		}
+		len2++;
+	}
+
+	result = malloc(len1 + len2 + 1);
+	if (!result)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
 
-	/* Multiply num1 and num2 digit by digit */
+	for (i = 0; i < len1 + len2; i++)
+	{
+		result[i] = '0';
+	}
+	result[i] = '\0';
+
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			k = i + j + 1;
-			result[k] += (num1[i] - '0') * (num2[j] - '0') + carry;
-			carry = result[k] / 10;
-			result[k] %= 10;
+			product = (num1[i] - '0') * (num2[j] - '0') + carry + (result[i + j + 1] - '0');
+			carry = product / 10;
+			result[i + j + 1] = (product % 10) + '0';
 		}
-		result[i] += carry;
+		result[i + j + 1] += carry;
 	}
 
-	/* Print result */
 	i = 0;
-	while (result[i] == 0 && i < len1 + len2 - 1)
+	while (result[i] == '0')
 	{
 		i++;
 	}
-	while (i < len1 + len2)
+	if (result[i] == '\0')
 	{
-		_putchar(result[i++] + '0');
+		_putchar('0');
 		_putchar('\n');
+		return (0);
 	}
 
-	/* Free memory */
+	while (result[i])
+	{
+		_putchar(result[i]);
+		i++;
+	}
+	_putchar('\n');
+
 	free(result);
 	return (0);
 }
