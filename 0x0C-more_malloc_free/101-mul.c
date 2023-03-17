@@ -15,9 +15,18 @@
  *
  * Return: 1 if c is a digit, 0 otherwise
 */
-int _isdigit(char c)
+int check_digits(char *str)
 {
-	return c >= '0' && c <= '9';
+	int i = 0;
+
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+		    return (0);
+		i++;
+	}
+
+	return (98);
 }
 
 /**
@@ -104,7 +113,7 @@ int main(int argc, char *argv[])
 	num1 = argv[1];
 	num2 = argv[2];
 
-	if (!_isdigit(num1) || !_isdigit(num2))
+	if (!check_digits(num1) || !check_digits(num2))
 	{
 		printf("Error\n");
 		return (98);
