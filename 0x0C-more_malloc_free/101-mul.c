@@ -58,10 +58,11 @@ void print_number(int n)
 }
 
 /**
- * multiply - Multiplies two numbers represented as strings of digits
- * @num1: A pointer to the first number
- * @num2: A pointer to the second number
- * Return: A pointer to an array containing the product
+ * main - entry point
+ * @argc: the number of command line arguments
+ * @argv: an array of command line argument strings
+ *
+ * Return: 0 on success, 1 on error
 */
 int main(int argc, char **argv)
 {
