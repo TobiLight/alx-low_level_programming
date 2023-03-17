@@ -76,6 +76,6 @@ int main(int argc, char **argv)
 	num2 = _atoi(argv[2]);
 
 	print_number(num1 * num2);
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
