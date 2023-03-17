@@ -3,10 +3,8 @@
  * Author: TobiLight
 */
 
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include <stdio.h>
 
 int find_len(char *str);
 char *create_xarray(int size);
@@ -25,7 +23,9 @@ int find_len(char *str)
 	int len = 0;
 
 	while (*str++)
+	{
 		len++;
+	}
 
 	return (len);
 }
