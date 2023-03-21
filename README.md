@@ -16,3 +16,4 @@ This repository contains programs written for the low-level programming and algo
 * **[0x0B. C](./0x0B-malloc_free)** - Malloc, Free
 * **[0x0C. C](./0x0C-more_malloc_free)** - More Malloc, Free
 * **[0x0D. C](./0x0D-preprocessor)** - Preprocessor
+* **[0x0E .C](./0x0E-structures_typedef)** - Structures, typedef
