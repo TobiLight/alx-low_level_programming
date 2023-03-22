@@ -8,4 +8,3 @@ This project has tasks that focuses on function pointers and everything you need
     * Prototype: `void array_iterator(int *array, size_t size, void (*action)(int))`;
     * where `size` is the size of the array
     * and `action` is a pointer to the function you need to use
-
