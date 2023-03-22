@@ -1,7 +1,7 @@
 /*
  * File: 1-array_iterator.c
  * Author: TobiLight
-*/
+ */
 
 #include "function_pointers.h"
 
@@ -14,9 +14,14 @@
  * @action: Pointer to function to execute.
  *
  * Return: nothing
-*/
+ */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	printf("hello");
+	unsigned int i;
+
+	for (i = 0; i < size; i++)
+	{
+		action(array[i]);
+	}
 }
