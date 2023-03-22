@@ -33,7 +33,7 @@ This project has tasks that focuses on function pointers and everything you need
     * if the user tries to divide (`/` or `%`) by `0`, print `Error`, followed by a new line, and exit with the status `100`
 
 This task requires that you create four different files.
-### **[3-calc.h](./3-calc.h)**
+**[3-calc.h](./3-calc.h)**
 This file should contain all the function prototypes and data structures used by the program. You can use this structure:
 `
 /**
@@ -48,7 +48,7 @@ typedef struct op
     int (*f)(int a, int b);
 } op_t;
 `
-### **[3-op_functions.c](./3-op_functions.c)**
+**[3-op_functions.c](./3-op_functions.c)**
 This file should contain the 5 following functions (not more):
     * `op_add`: returns the sum of `a` and `b`. Prototype: `int op_add(int a, int b)`;
     * `op_sub`: returns the difference of `a` and `b`. Prototype: `int op_sub(int a, int b)`;
