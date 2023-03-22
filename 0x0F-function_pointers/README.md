@@ -37,7 +37,7 @@ This task requires that you create four different files.
 **[3-calc.h](./3-calc.h)**
 
 This file should contain all the function prototypes and data structures used by the program. You can use this structure:
-`
+```
 /**
  * struct op - Struct op
  *
@@ -49,7 +49,7 @@ typedef struct op
     char *op;
     int (*f)(int a, int b);
 } op_t;
-`
+```
 
 **[3-op_functions.c](./3-op_functions.c)**
 
