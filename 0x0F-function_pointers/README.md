@@ -16,7 +16,7 @@ This project has tasks that focuses on function pointers and everything you need
     * If no element matches, return `-1`
     * If size <= `0`, return `-1`
 
-* **[]()** - Write a program that performs simple operations.
+* **[3-op_functions.c](./3-op_functions.c)** - Write a program that performs simple operations.
     * You are allowed to use the standard library
     * Usage: `calc num1 operator num2`
     * You can assume `num1` and `num2` are integers, so use the `atoi` function to convert them from the string input to `int`
