@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	
 	/* Get function using operator entered by user */
 	op = get_op_func(argv[2]);
 
