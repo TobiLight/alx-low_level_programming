@@ -3,7 +3,7 @@
 
 #include <stdarg.h>
 
-/**
+/*
  * File: variadic_functions.h
  * Author: TobiLight
  * Description: This header file contains all the
