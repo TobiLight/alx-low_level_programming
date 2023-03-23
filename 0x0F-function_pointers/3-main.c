@@ -10,7 +10,7 @@
  * @argc: Number of arguments
  * @argv: Array of arguments
  *
- * Returns: Always 0 (Success)
+ * Return: Always 0 (Success)
 */
 
 int main(int argc, char *argv[])
