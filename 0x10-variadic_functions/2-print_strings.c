@@ -23,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	/* Initialize va_list with number of arguments */
 	va_start(args, n);
 
-	/* Loop and access all arguments in va_list*/
+	/* Loop and access all arguments in va_list */
 	for (i = 0; i < n; i++)
 	{
 		str = va_arg(args, char *);
@@ -32,7 +32,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("(nil)");
 
 		printf("%s", str);
-		/* Remove separator at the end of last digit*/
+		/* Remove separator at the end of last digit */
 		if (i != (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
