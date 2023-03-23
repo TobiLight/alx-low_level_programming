@@ -34,8 +34,7 @@ This project has tasks that focuses on function pointers and everything you need
 
 This task requires that you create four different files.
 
-* **[3-calc.h](./3-calc.h)**  
-This file should contain all the function prototypes and data structures used by the program. You can use this structure:
+* **[3-calc.h](./3-calc.h)**  - This file should contain all the function prototypes and data structures used by the program. You can use this structure:
 ```
 /**
  * struct op - Struct op
@@ -50,17 +49,14 @@ typedef struct op
 } op_t;
 ```
 
-* **[3-op_functions.c](./3-op_functions.c)**  
-This file should contain the 5 following functions (not more)  
+* **[3-op_functions.c](./3-op_functions.c)**  - This file should contain the 5 following functions (not more)  
 * `op_add`: returns the sum of `a` and `b`. Prototype: `int op_add(int a, int b)`;
 * `op_sub`: returns the difference of `a` and `b`. Prototype: `int op_sub(int a, int b)`;
 * `op_mul`: returns the product of `a` and `b`. Prototype: `int op_mul(int a, int b)`;
 * `op_div`: returns the result of the division of `a` by `b`. Prototype: `int op_div(int a, int b)`;
 * `op_mod`: returns the remainder of the division of `a` by `b`. Prototype: `int op_mod(int a, int b)`;
 
-* **[3-get_op_func.c](./3-get_op_func.c)**  
-This file should contain the function that selects the correct function to perform the operation asked by the user. You’re not allowed to declare any other function.
-
+* **[3-get_op_func.c](./3-get_op_func.c)**  - This file should contain the function that selects the correct function to perform the operation asked by the user. You’re not allowed to declare any other function.
 * Prototype: `int (*get_op_func(char *s))(int, int)`;
 * where `s` is the operator passed as argument to the program
 * This function returns a pointer to the function that corresponds to the operator given as a * parameter. Example: `get_op_func("+")` should return a pointer to the function `op_add`
@@ -85,9 +81,7 @@ op_t ops[] = {
     int i;
 ```
 
-* **[3-main.c](./3-main.c)**  
-This file should contain your `main` function only.  
-
+* **[3-main.c](./3-main.c)**  - This file should contain your `main` function only.  
 * You are not allowed to code any other function than `main` in this file
 * You are not allowed to directly call `op_add`, `op_sub`, `op_mul`, `op_div` or `op_mod` from the `main` function
 * You have to use `atoi` to convert arguments to `int`
