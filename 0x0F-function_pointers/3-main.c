@@ -1,17 +1,17 @@
 /*
  * File: 3-main.c
  * Author: TobiLight
- */
+*/
 
 #include "3-calc.h"
 
 /**
  * main - Program to perform simple operations.
- * @argc: Argument count
+ * @argc: Number of arguments
  * @argv: Array of arguments
  *
- * Returns: Always (0)
- */
+ * Returns: Always 0 (Success)
+*/
 
 int main(int argc, char *argv[])
 {
