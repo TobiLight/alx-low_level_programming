@@ -91,7 +91,9 @@ This file should contain your `main` function only.
 * You are not allowed to directly call `op_add`, `op_sub`, `op_mul`, `op_div` or `op_mod` from the `main` function
 * You have to use `atoi` to convert arguments to `int`
 * You are not allowed to use any kind of loop
-* You are allowed to use a maximum of 3 `if` statements  
+* You are allowed to use a maximum of 3 `if` statements  <br>
+
+
 
 * **[100-main_opcodes.c](./100-main_opcodes.c)** - Write a program that prints the opcodes of its own main function.
 	* Usage: `./main number_of_bytes`
