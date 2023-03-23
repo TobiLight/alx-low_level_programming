@@ -17,39 +17,35 @@
 void print_all(const char *const format, ...)
 {
 	va_list args;
-	char *temp_str, *separator;
-	unsigned int i;
+	int i, j;
+	char *separator = ", ";
+	char *temp = "";
+
+	fmt op[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'s', print_string},
+		{'f', print_float},
+		{'\0', NULL}
+	};
 
 	va_start(args, format);
 
 	i = 0;
-	separator = "";
-	while (format && format[i])
+
+	while (format[i] != '\0' && format != NULL)
 	{
-		switch (format[i])
+		j = 0;
+		while (op[j].c != '\0')
 		{
-		case 'c':
-			printf("%s%c", separator, va_arg(args, int));
-			break;
-		case 's':
-			temp_str = va_arg(args, char *);
-			if (temp_str == NULL)
+			if (op[j].c == format[i])
 			{
-				temp_str = "(nil)";
+				printf("%s", temp);
+				op[j].func(args);
+				temp = separator;
 			}
-			printf("%s%s", separator, temp_str);
-			break;
-		case 'f':
-			printf("%s%f", separator, va_arg(args, double));
-			break;
-		case 'i':
-			printf("%s%d", separator, va_arg(args, int));
-			break;
-		default:
-			i++;
-			continue;
+			j++;
 		}
-		separator = ", ";
 		i++;
 	}
 
