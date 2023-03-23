@@ -31,14 +31,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (str == NULL)
 			printf("(nil)");
 
-		/* If no separator, don't print anything*/
-		if (separator == NULL)
-		{
-			break;
-		}
 		printf("%s", str);
 		/* Remove separator at the end of last digit*/
-		if (i < (n - 1))
+		if (i < (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
 
