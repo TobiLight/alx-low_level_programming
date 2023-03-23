@@ -1,7 +1,7 @@
 /*
  * File: 2-print_strings.c
  * Author: TobiLight
-*/
+ */
 
 #include "variadic_functions.h"
 
@@ -11,7 +11,7 @@
  * @n: Number of strings passed
  *
  * Return: nothing
-*/
+ */
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -34,17 +34,25 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		str = va_arg(args, char *);
 
 		if (str == NULL)
+		{
 			str = "(nil)";
+		}
 
-		if (i < n - 1)
+		if (i < (n - 1))
 		{
 			if (separator == NULL)
+			{
 				printf("%s", str);
+			}
 			else
+			{
 				printf("%s%s", str, separator);
+			}
 		}
 		else
+		{
 			printf("%s\n", str);
+		}
 	}
 	va_end(args);
 }
