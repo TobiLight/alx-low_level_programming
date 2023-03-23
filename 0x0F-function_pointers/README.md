@@ -34,7 +34,7 @@ This project has tasks that focuses on function pointers and everything you need
 
 This task requires that you create four different files.
 
-***[3-calc.h](./3-calc.h)**  
+* **[3-calc.h](./3-calc.h)**  
 This file should contain all the function prototypes and data structures used by the program. You can use this structure:
 ```
 /**
@@ -50,7 +50,7 @@ typedef struct op
 } op_t;
 ```
 
-**[3-op_functions.c](./3-op_functions.c)**  
+* **[3-op_functions.c](./3-op_functions.c)**  
 This file should contain the 5 following functions (not more)  
 * `op_add`: returns the sum of `a` and `b`. Prototype: `int op_add(int a, int b)`;
 * `op_sub`: returns the difference of `a` and `b`. Prototype: `int op_sub(int a, int b)`;
@@ -58,7 +58,7 @@ This file should contain the 5 following functions (not more)
 * `op_div`: returns the result of the division of `a` by `b`. Prototype: `int op_div(int a, int b)`;
 * `op_mod`: returns the remainder of the division of `a` by `b`. Prototype: `int op_mod(int a, int b)`;
 
-**[3-get_op_func.c](./3-get_op_func.c)**  
+* **[3-get_op_func.c](./3-get_op_func.c)**  
 This file should contain the function that selects the correct function to perform the operation asked by the user. You’re not allowed to declare any other function.
 
 * Prototype: `int (*get_op_func(char *s))(int, int)`;
@@ -85,7 +85,7 @@ op_t ops[] = {
     int i;
 ```
 
-**[3-main.c](./3-main.c)**  
+* **[3-main.c](./3-main.c)**  
 This file should contain your `main` function only.  
 
 * You are not allowed to code any other function than `main` in this file
@@ -94,8 +94,6 @@ This file should contain your `main` function only.
 * You are not allowed to use any kind of loop
 * You are allowed to use a maximum of 3 `if` statements  
 
-```
-```
 
 * **[100-main_opcodes.c](./100-main_opcodes.c)** - Write a program that prints the opcodes of its own main function.
 	* Usage: `./main number_of_bytes`
