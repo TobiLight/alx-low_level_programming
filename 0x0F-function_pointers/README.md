@@ -35,7 +35,7 @@ This project has tasks that focuses on function pointers and everything you need
 This task requires that you create four different files.
 
 * **[3-calc.h](./3-calc.h)**  - This file should contain all the function prototypes and data structures used by the program. You can use this structure:
-```
+	```
 	/**
 	* struct op - Struct op
 	*
