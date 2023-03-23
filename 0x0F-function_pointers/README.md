@@ -97,6 +97,7 @@ This file should contain your `main` function only.
 * You are not allowed to use any kind of loop
 * You are allowed to use a maximum of 3 `if` statements
 
+
 * **[100-main_opcodes.c](./100-main_opcodes.c)** - Write a program that prints the opcodes of its own main function.
 	* Usage: `./main number_of_bytes`
 	* Output format:
