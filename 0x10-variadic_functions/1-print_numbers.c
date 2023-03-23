@@ -25,14 +25,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	/* Loop and access all arguments in va_list*/
 	for (i = 0; i < n; i++)
 	{
-		/* If no separator, don't print anything*/
-		if (separator == NULL)
-		{
-			break;
-		}
 		printf("%d", va_arg(args, unsigned int));
 		/* Remove separator at the end of last digit*/
-		if (i < (n - 1))
+		if (i < (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
 
