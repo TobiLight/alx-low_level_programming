@@ -8,7 +8,7 @@
 /**
  * sum_them_all - Returns the sum of all its parameters.
  * @n: Number of arguments
- * 
+ *
  * Return: Integer (sum) else 0 if n is 0
 */
 
