@@ -19,4 +19,4 @@ This repository contains programs written for the low-level programming and algo
 * **[0x0E. C](./0x0E-structures_typedef)** - Structures, typedef
 * **[0x0F. C](./0x0F-function_pointers)** - Function pointers
 * **[0x10-variadic_functions](./0x10-variadic_functions)** - Variadic functions
-* **[0x11. C - printf](../printf)** - printf
+* **[0x11. C - printf](https://github.com/TobiLight/printf.git)** - printf
