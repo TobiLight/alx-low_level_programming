@@ -22,6 +22,7 @@ void free_list(list_t *head)
 	{
 		/* store the next node before freeing the current node */
 		next = current->next;
+		free(current->str);
 		free(current);
 		current = next;
 	}
