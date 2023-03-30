@@ -1,0 +1,30 @@
+/*
+ * File: 0-print_list.c
+ * Author: TobiLight
+*/
+
+#include "lists.h"
+
+/**
+ * print_list - prints all the elements of a list_t list
+ * @h: list structure pointer
+ *
+ * Return:  Number of nodes
+*/
+
+size_t print_list(const list_t *h)
+{
+	size_t count;
+
+	while (h != NULL)
+	{
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
+
+		printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
+		count++;
+	}
+
+	return (count);
+}
