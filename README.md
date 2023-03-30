@@ -20,4 +20,4 @@ This repository contains programs written for the low-level programming and algo
 * **[0x0F. C](./0x0F-function_pointers)** - Function pointers
 * **[0x10 .C](./0x10-variadic_functions)** - Variadic functions
 * **[0x11. C](https://github.com/TobiLight/printf.git)** - printf
-* **[0x12. C](./0x12-singly_linked_list)** - Singly linked list
+* **[0x12. C](./0x12-singly_linked_lists)** - Singly linked lists
