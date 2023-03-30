@@ -8,7 +8,7 @@
 /**
  * list_len - Returns number of elements in a list_t list
  * @h: list_t list
- * 
+ *
  * Return: Number of elements
 */
 
