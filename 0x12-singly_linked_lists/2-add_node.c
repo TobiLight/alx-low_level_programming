@@ -18,6 +18,7 @@ list_t *add_node(list_t **head, const char *str)
 	/* Initialize new node pointer with list_t */
 	list_t *new_node;
 	unsigned int count = 0;
+
 	if (head == NULL || str == NULL)
 	{
 		return (NULL);
@@ -25,7 +26,6 @@ list_t *add_node(list_t **head, const char *str)
 
 	/* Allocate memory for new_node */
 	new_node = malloc(sizeof(list_t));
-
 	if (new_node == NULL)
 	{
 		return (NULL);
@@ -33,7 +33,6 @@ list_t *add_node(list_t **head, const char *str)
 
 	/* Duplicate and update new_node str */
 	new_node->str = strdup(str);
-
 	if (new_node->str == NULL)
 	{
 		free(new_node);
