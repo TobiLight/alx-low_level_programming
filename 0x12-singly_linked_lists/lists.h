@@ -1,6 +1,13 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+/*
+ * File: lists.h
+ * Author: TobiLight
+ * Description: Header file that contains all the function
+ *              prototypes for this project.
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

@@ -1,7 +1,7 @@
 /*
  * File: 3-add_node_end.c
  * Author: TobiLight
- */
+*/
 
 #include "lists.h"
 
@@ -11,7 +11,7 @@
  * @str: The string to be added to the new node
  *
  * Return: The address of the new element, or NULL if it failed
- */
+*/
 
 list_t *add_node_end(list_t **head, const char *str)
 {
