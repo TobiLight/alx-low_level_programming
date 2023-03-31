@@ -1,16 +1,16 @@
 /*
  * File: 100-first.c
  * Author: TobiLight
- */
+*/
 
 #include "lists.h"
 
 /**
- * before_main - A constructor function that prints a
+ * my_constructor - A constructor function that prints a
  *               message before main is called
  *
  * Return: nothing
- */
+*/
 
 void my_constructor(void)
 {
