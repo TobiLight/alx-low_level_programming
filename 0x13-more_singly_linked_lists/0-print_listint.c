@@ -16,6 +16,7 @@ size_t print_listint(const listint_t *h)
 {
 	size_t nodes_count = 0;
 
+
 	/* loop through the head */
 	while (h != NULL)
 	{

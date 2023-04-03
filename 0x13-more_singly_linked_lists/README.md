@@ -8,3 +8,5 @@ This project focuses more on implementing singly linked lists and performing som
 	* Return: the number of nodes
 	* Format: see example
 	* You are allowed to use `printf`
+* **[1-listint_len.c](./1-listint_len.c)** - Write a function that returns the number of elements in a linked `listint_t` list.
+	* Prototype: `size_t listint_len(const listint_t *h);`
