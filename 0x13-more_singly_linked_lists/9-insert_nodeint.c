@@ -1,5 +1,5 @@
 /*
- * File: 9-insert_nodeint.c
+  File: 9-insert_nodeint.c
  * Author: TobiLight
 */
 
@@ -16,8 +16,7 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new_node;
-	listint_t *temp;
+	listint_t *new_node, *current, *temp;
 	unsigned int count = 0;
 
 	if (head == NULL)
@@ -33,19 +32,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (*head == NULL)
 		return (NULL);
 
+	temp = *head;
 	/* Loop through the list */
-	while (*head != NULL)
+	while (temp != NULL)
 	{
-		temp = *head;
-		if (count == idx)
+		current = temp;
+		if (count + 1 == idx)
 		{
 			new_node->n = n;
-			new_node->next = temp;
-			*head = new_node;
+			new_node->next = current->next;
+			current->next = new_node;
 			break;
 		}
 		count++;
-		*head = (*head)->next;
+		temp = temp->next;
 	}
 	return (new_node);
 }
