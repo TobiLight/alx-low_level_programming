@@ -37,7 +37,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		return (new_node);
 	}
 	tail = *head;
-	/* Loop through the list until null */
+	/* Loop through the list until next is null */
 	while (tail->next != NULL)
 		tail = tail->next;
 
