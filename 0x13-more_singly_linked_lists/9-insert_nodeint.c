@@ -1,12 +1,12 @@
 /*
-  File: 9-insert_nodeint.c
+ * File: 9-insert_nodeint.c
  * Author: TobiLight
 */
 
 #include "lists.h"
 
 /**
- * insert_nodeint - Inserts a new node at a given position.
+ * insert_nodeint_at_index - Inserts a new node at a given position.
  * @head: Pointer to a pointer listint_t  list.
  * @idx: index of the list where the new node should be added.
  * @n: Data for the listint_t list node
