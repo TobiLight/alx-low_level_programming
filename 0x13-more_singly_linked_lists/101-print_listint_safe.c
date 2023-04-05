@@ -63,26 +63,24 @@ size_t count_unique_nodes(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 1, i = 0;
+	size_t count = 1, i;
 
 	count = count_unique_nodes(head);
 	if (count == 0)
 	{
-		while (head != NULL)
+		for (; head != NULL; count++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
-			count++;
 		}
 	}
 
 	if (count > 0)
 	{
-		while (i < count)
+		for (i = 0; i < count; i++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
-			i++;
 		}
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
