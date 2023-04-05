@@ -63,7 +63,7 @@ size_t count_unique_nodes(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 1, i;
+	size_t count, i;
 
 	count = count_unique_nodes(head);
 	if (count == 0)
@@ -74,8 +74,7 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 		}
 	}
-
-	if (count > 0)
+	else
 	{
 		for (i = 0; i < count; i++)
 		{
