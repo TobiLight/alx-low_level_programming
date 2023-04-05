@@ -59,7 +59,7 @@ size_t count_unique_nodes(const listint_t *head)
  * @head: Pointer to a listint_t node head
  *
  * Return: The number of nodes in the list
-*/
+ */
 
 size_t print_listint_safe(const listint_t *head)
 {
@@ -68,16 +68,19 @@ size_t print_listint_safe(const listint_t *head)
 	count = count_unique_nodes(head);
 	if (count == 0)
 	{
-		for (; head != NULL; count++)
+		while (head != NULL)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
+			count++;
 		}
 	}
 	else
 	{
-		for (i = 0; i < count; i++)
+		i = 0;
+		while ( i < count)
 		{
+			i++;
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
