@@ -54,3 +54,16 @@ This project focuses more on implementing singly linked lists and performing som
 	* You should go through the list only once
 	* If the function fails, exit the program with status `98`
 	* Output format: see example
+
+* **[102-free_listint_safe.c](./102-free_listint_safe.c)** - Write a function that frees a `listint_t` list.
+	* Prototype: `size_t free_listint_safe(listint_t **h);`
+	* This function can free lists with a loop
+	* You should go though the list only once
+	* Returns: the size of the list that was free’d
+	* The function sets the `head` to `NULL`
+
+* **[103-find_loop.c](./103-find_loop.c)** - Write a function that finds the loop in a linked list.
+	* Prototype: `listint_t *find_listint_loop(listint_t *head);`
+	* Returns: The address of the node where the loop starts, or `NULL` if there is no loop
+	* You are not allowed to use `malloc`, `free` or arrays
+	* You can only declare a maximum of two variables in your function
