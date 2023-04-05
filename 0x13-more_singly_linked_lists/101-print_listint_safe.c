@@ -16,7 +16,7 @@ size_t count_unique_nodes(const listint_t *head);
 
 size_t count_unique_nodes(const listint_t *head)
 {
-	listint_t *slow, *fast;
+	const listint_t *slow, *fast;
 	size_t count = 1;
 
 	/* Make slow one step ahead and fast 2 steps ahead */
