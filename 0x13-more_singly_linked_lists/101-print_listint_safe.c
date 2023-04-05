@@ -19,7 +19,7 @@ size_t count_unique_nodes(const listint_t *head)
 	const listint_t *slow, *fast;
 	size_t count = 1;
 
-	if (head == NULL)
+	if (head == NULL || head->next == NULL)
 		exit(98);
 
 	/* Make slow one step ahead and fast 2 steps ahead */
