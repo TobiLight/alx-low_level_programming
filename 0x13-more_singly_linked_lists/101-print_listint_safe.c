@@ -48,6 +48,7 @@ size_t count_unique_nodes(const listint_t *head)
 		slow = slow->next;
 		fast = (fast->next)->next;
 	}
+	return (count);
 }
 
 /**
