@@ -59,7 +59,7 @@ size_t count_unique_nodes(const listint_t *head)
  * @head: Pointer to a listint_t node head
  *
  * Return: The number of nodes in the list
- */
+*/
 
 size_t print_listint_safe(const listint_t *head)
 {
