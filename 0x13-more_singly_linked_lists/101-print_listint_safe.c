@@ -1,57 +1,24 @@
 /*
  * File: 101-print_listint_safe.c
  * Author: TobiLight
-*/
+ */
 
 #include "lists.h"
 
+size_t count_unique_nodes(const listint_t *head);
 /**
- * print_nodelist - helper function to print listint_t list.
- * @count: number of nodes
- * @head: Pointer to listint_t list head node
+ * count_unique_nodes - counts the number of unique
+ *                      nodes in a listint_t list.
+ * @head: Pointer to a listint_t list
  *
- * Return: nothing
+ * Return: Number of unique nodes otherwise 98.
  */
 
-void print_nodelist(size_t count, const listint_t *head)
+size_t count_unique_nodes(const listint_t *head)
 {
-	size_t i = 0;
-
-	if (count == 0)
-	{
-		while (head != NULL)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
-		}
-	}
-
-	if (count > 0)
-	{
-		while (i < count)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
-			i++;
-		}
-		printf("-> [%p] %d\n", (void *)head, head->n);
-	}
-}
-
-/**
- * print_listint_safe - prints a listint_t linked list.
- * @head: Pointer to a listint_t node head
- *
- * Return: The number of nodes in the list
-*/
-
-size_t print_listint_safe(const listint_t *head)
-{
-	const listint_t *slow, *fast;
+	listint_t *slow, *fast;
 	size_t count = 1;
 
-	if (head == NULL || head->next == NULL)
-		exit(98);
 	/* Make slow one step ahead and fast 2 steps ahead */
 	slow = head->next;
 	fast = (head->next)->next;
@@ -81,7 +48,43 @@ size_t print_listint_safe(const listint_t *head)
 		slow = slow->next;
 		fast = (fast->next)->next;
 	}
+}
 
-	print_nodelist(count, head);
+/**
+ * print_listint_safe - prints a listint_t linked list.
+ * @head: Pointer to a listint_t node head
+ *
+ * Return: The number of nodes in the list
+ */
+
+size_t print_listint_safe(const listint_t *head)
+{
+	const listint_t *slow, *fast;
+	size_t count = 1, i = 0;
+
+	if (head == NULL || head->next == NULL)
+		exit(98);
+
+	count = count_unique_nodes(head);
+
+	if (count == 0)
+	{
+		while (head != NULL)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+	}
+
+	if (count > 0)
+	{
+		while (i < count)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+			i++;
+		}
+		printf("-> [%p] %d\n", (void *)head, head->n);
+	}
 	return (count);
 }
