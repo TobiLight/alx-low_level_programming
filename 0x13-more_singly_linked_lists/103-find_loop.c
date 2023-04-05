@@ -39,7 +39,7 @@ listint_t *find_listint_loop(listint_t *head)
 			{
 				slow = slow->next;
 			}
-			return ((void *)fast);
+			return (slow);
 		}
 		slow = slow->next;
 		fast = (fast->next)->next;
