@@ -59,7 +59,6 @@ size_t count_unique_nodes(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow, *fast;
 	size_t count = 1, i = 0;
 
 	if (head == NULL || head->next == NULL)
