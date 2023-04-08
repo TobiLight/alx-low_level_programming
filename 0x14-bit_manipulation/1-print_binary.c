@@ -20,7 +20,6 @@ void print_binary(unsigned long int n)
 	if (n == 0)
 	{
 		printf("0\n");
-		return (0);
 	}
 
 	m = 1ul << (sizeof(unsigned long int) * 8 - 1);
@@ -29,7 +28,7 @@ void print_binary(unsigned long int n)
 	while (m != 0)
 	{
 		/* If current bit is 1 */
-		if ((n & m) >> 1)
+		if ((n & m) != 0)
 			printf("1");
 		else
 			printf("0");
