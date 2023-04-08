@@ -35,5 +35,5 @@ void print_binary(unsigned long int n)
 		m >>= 1;
 	}
 	if (!is_one)
-		printf("\n");
+		printf("0");
 }
