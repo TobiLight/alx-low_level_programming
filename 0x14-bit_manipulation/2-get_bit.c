@@ -16,16 +16,12 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i = 0;
-	char c[30];
-	itoa(n, c, 2);
-	while (c[i] != '\0')
-	{
-		if (i == index)
-		{
-			return (c[i] - '0');
-		}
-		i++;
-	}
-	return (-1);
+	if (index >= sizeof(unsigned long int) * 8)
+		return (-1);
+
+	/* will always return 1 at given index if true else 0 */
+	if ((n & (1 << index)) != 0)
+		return (1);
+
+	return (0);
 }
