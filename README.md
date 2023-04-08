@@ -22,3 +22,4 @@ This repository contains programs written for the low-level programming and algo
 * **[0x11. C](https://github.com/TobiLight/printf.git)** - printf
 * **[0x12. C](./0x12-singly_linked_lists)** - Singly linked lists
 * **[0x13 .C](./0x13-more_singly_linked_lists)** - More singly lined lists
+* **[0x14. c](./0x14-bit_manipulation/)** - Bit manipulation
