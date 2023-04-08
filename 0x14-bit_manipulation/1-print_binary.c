@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 	unsigned long int m;
 	int is_one = 0;
 
-	m = 1ul << (sizeof(unsigned long int) * 8 - 2);
+	m = 1ul << (sizeof(unsigned long int) * 8 - 1);
 
 	/* Loop through each bit*/
 	while (m > 0)
