@@ -1,4 +1,4 @@
-/**
+/*
  * File: 2-get_bit.c
  * Author: TobiLight
  */
@@ -18,6 +18,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i = 0;
 	char c[30];
+
 	itoa(n, c, 2);
 	while (c[i] != '\0')
 	{
