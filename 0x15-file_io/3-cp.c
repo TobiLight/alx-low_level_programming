@@ -35,11 +35,11 @@ char *create_buffer(char *file)
  */
 void close_fd(int fd)
 {
-	int file;
+	int f;
 
-	file = close(fd);
+	f = close(fd);
 
-	if (file == -1)
+	if (f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 	buffer = create_buffer(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	rd = read(file_from, buffer, 1024);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	while (rd > 0)
 	{
 		if (file_from == -1 || rd == -1)
