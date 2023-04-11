@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
 	int file_from, file_to, rd, wr;
 	char *buffer;
 	unsigned int m = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
