@@ -8,6 +8,7 @@
  *              typedefs.
 */
 
+#include <elf.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
