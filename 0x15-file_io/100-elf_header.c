@@ -4,6 +4,7 @@
  */
 
 #include "main.h"
+#include <elf.h>
 
 /**
  * print_abi - Prints the ABI version of an ELF header.
