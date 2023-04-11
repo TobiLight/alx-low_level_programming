@@ -4,6 +4,8 @@
  */
 
 #include "main.h"
+char *create_buffer(char *file);
+void close_fd(int fd);
 
 /**
  * create_buffer - Allocates memory (1024) bytes for a buffer.
