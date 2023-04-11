@@ -6,7 +6,7 @@
  * Author: TobiLight
  * Description: Contains function prototypes, structs and/or
  *              typedefs.
- */
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
