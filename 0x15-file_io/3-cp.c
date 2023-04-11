@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to, rd, wr;
 	char *buffer;
-	unsigned int m = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -66,7 +65,7 @@ int main(int argc, char *argv[])
 	buffer = create_buffer(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	rd = read(file_from, buffer, 1024);
-	file_to = open(argv[2], m);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	while (rd > 0)
 	{
 		if (file_from == -1 || rd == -1)
