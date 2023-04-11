@@ -3,12 +3,7 @@
  * Author: TobiLight
  */
 
-void check_elf(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
-void print_class(unsigned char *e_ident);
-void print_data(unsigned char *e_ident);
-void print_version(unsigned char *e_ident);
-void print_abi(unsigned char *e_ident);
+#include "main.h"
 
 /**
  * check_elf - Checks if a file is an ELF file.
