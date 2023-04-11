@@ -4,7 +4,6 @@
  */
 
 #include "main.h"
-#include <unistd.h>
 
 /**
  * read_textfile -reads a text file and prints it
@@ -32,7 +31,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	op = open(filename, O_RDONLY);
-	rd = read(0, buffer, letters);
+	rd = read(op, buffer, letters);
 	wr = write(STDOUT_FILENO, buffer, rd);
 
 	if (op == -1 || rd == -1 || wr == -1 || wr != rd)
