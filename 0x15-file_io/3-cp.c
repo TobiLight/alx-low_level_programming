@@ -4,6 +4,7 @@
  */
 
 #include "main.h"
+
 char *create_buffer(char *file);
 void close_fd(int fd);
 
