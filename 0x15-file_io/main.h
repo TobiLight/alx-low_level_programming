@@ -4,9 +4,9 @@
 /*
  * File: main.h
  * Author: TobiLight
- * Description: Contains function prototypes, structs and/or
+ * Description: This file function prototypes, structs and/or
  *              typedefs.
-*/
+ */
 
 #include <stdlib.h>
 #include <stdio.h>
