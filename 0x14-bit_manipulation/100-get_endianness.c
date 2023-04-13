@@ -1,7 +1,7 @@
 /*
  * File: 100-get_endianness.c
  *  Author: TobiLight
- */
+*/
 
 #include "main.h"
 
@@ -15,5 +15,6 @@ int get_endianness(void)
 {
 	unsigned int num = 1;
 	char *ptr = (char *)&num;
+
 	return (*ptr == 1);
 }

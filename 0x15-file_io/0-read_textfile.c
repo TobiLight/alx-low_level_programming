@@ -3,7 +3,6 @@
  * Author: TobiLight
  */
 
-#include <unistd.h>
 #include "main.h"
 
 /**
