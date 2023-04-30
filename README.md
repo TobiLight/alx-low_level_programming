@@ -20,6 +20,7 @@ This repository contains programs written for the low-level programming and algo
 * **[0x0F. C](./0x0F-function_pointers)** - Function pointers
 * **[0x10 .C](./0x10-variadic_functions)** - Variadic functions
 * **[0x11. C](https://github.com/TobiLight/printf.git)** - printf
+=========== so i deferred and have to redo the below again. :) =============
 * **[0x12. C](./0x12-singly_linked_lists)** - Singly linked lists
 * **[0x13 .C](./0x13-more_singly_linked_lists)** - More singly lined lists
 * **[0x14. C](./0x14-bit_manipulation/)** - Bit manipulation
