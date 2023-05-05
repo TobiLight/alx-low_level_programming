@@ -9,7 +9,7 @@ This project, **Bit manipulation**, focuses on a technique used to manipulare in
     * Return: the converted number, or 0 if
         * there is one or more chars in the string `b` that is not `0` or `1`
         * `b` is `NULL`
-        
+
 * **[1-print_binary.c](./1-print_binary.c)** - Write a function that prints the binary representation of a number.
     * Prototype: `void print_binary(unsigned long int n);`
     * Format: see example
@@ -24,5 +24,10 @@ This project, **Bit manipulation**, focuses on a technique used to manipulare in
 
 * **[3-set_bit.c](./3-set_bit.c)** - Write a function that sets the value of a bit to `1` at a given index.
     * Prototype: `int set_bit(unsigned long int *n, unsigned int index);`
+    * where `index` is the index, starting from `0` of the bit you want to set
+    * Returns: `1` if it worked, or `-1` if an error occurred
+
+* **[4-clear_bit.c](./4-clear_bit.c)** - Write a function that sets the value of a bit to `0` at a given index.
+    * Prototype: `int clear_bit(unsigned long int *n, unsigned int index);`
     * where `index` is the index, starting from `0` of the bit you want to set
     * Returns: `1` if it worked, or `-1` if an error occurred
