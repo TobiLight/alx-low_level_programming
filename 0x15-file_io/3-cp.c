@@ -4,8 +4,11 @@
  */
 
 #include "main.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-char *create:_buffer(char *file);
+char *create_buffer(char *file);
 void close_fd(int fd);
 
 /**
