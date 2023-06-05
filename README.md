@@ -25,3 +25,4 @@ This repository contains programs written for the low-level programming and algo
 * **[0x14. C](./0x14-bit_manipulation/)** - Bit manipulation
 * **[0x15. C](./0x15-file_io/)** - File IO
 * **[simple_shell](https://github.com/TobiLight/simple_shell)** - Simple shell
+* **[0x00. Python](./0x00-python-hello-world)** - Hello, World
