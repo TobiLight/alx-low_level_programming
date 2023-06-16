@@ -6,15 +6,15 @@
 #include "lists.h"
 
 /**
- * print_dlistint - Prints all the elements of a 
+ * print_dlistint - Prints all the elements of a
  *                  dlistint_t list.
  * @h: Constant pointer to a dlistint_t head
  *
  * Return: The number of nodes.
- */
+*/
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t len;
+	size_t len = 0;
 
 	while (h)
 	{
