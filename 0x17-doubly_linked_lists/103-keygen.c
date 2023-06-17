@@ -84,7 +84,6 @@ int main(int argc, char *argv[])
 	(void)argc;
 
 	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
-
 	generate_password(length, password, codex, argv);
 	printf("%s", password);
 	return (0);
