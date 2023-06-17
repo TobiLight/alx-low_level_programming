@@ -15,10 +15,11 @@
  *
  * Return: Always 0.
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
+    (void) argc;
     char password[7], *codex;
-    int length = strlength(argv[1]), i, temp;
+    int length = strlen(argv[1]), i, temp;
 
     codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 
