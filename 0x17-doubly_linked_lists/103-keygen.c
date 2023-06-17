@@ -7,6 +7,60 @@
 #include <stdlib.h>
 #include <string.h>
 
+char generate_password_character(const char *input, int length, int *index);
+void generate_password(const char* input, int length, char* password);
+
+char generate_password_character(const char *input, int length, int *index)
+{
+	int temp = 0;
+	int i = 0;
+
+	while (i < length)
+	{
+		temp += input[i];
+		i++;
+	}
+	*index = (*index + 1) % length;
+	return ((temp ^ 79) & 63);
+}
+
+void generate_password(const char* input, int length, char* password) {
+    const char codex[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./";
+    int temp = 0;
+    int i = 0;
+
+    password[0] = input[0];
+
+    password[1] = generate_password_character(input, length, &i);
+    password[2] = generate_password_character(input, length, &i);
+
+    temp = input[0];
+    i = 0;
+    while (i < length) {
+        if (input[i] > temp)
+            temp = input[i];
+        i++;
+    }
+    srand(temp ^ 14);
+    password[3] = codex[rand() & 63];
+
+    temp = 0;
+    i = 0;
+    while (i < length) {
+        temp += (input[i] * input[i]);
+        i++;
+    }
+    password[4] = generate_password_character(input, length, &i);
+
+    i = 0;
+    while (i < input[0]) {
+        temp = rand();
+        i++;
+    }
+    password[5] = generate_password_character(input, length, &i);
+
+    password[6] = '\0';
+}
 /**
  * main - Generates and prints passwords for
  *        the crackme5 executable.
@@ -17,57 +71,12 @@
  */
 int main(int argc, char *argv[])
 {
-	char password[7], *codex;
-	int length = strlen(argv[1]), i, temp;
+    char password[7];
 	(void)argc;
 
-	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+    generate_password(argv[1], sizeof(*argv) - 1, password);
 
-	temp = (length ^ 59) & 63;
-	password[0] = codex[temp];
+    printf("Generated password: %s\n", password);
 
-	temp = 0;
-	i = 0;
-	while (i < length)
-	{
-		temp += argv[1][i];
-		i++;
-	}
-	password[1] = codex[(temp ^ 79) & 63];
-	temp = 1;
-	i = 0;
-	while (i < length)
-	{
-		temp *= argv[1][i];
-		i++;
-	}
-	password[2] = codex[(temp ^ 85) & 63];
-	temp = 0;
-	i = 0;
-	while (i < length)
-	{
-		if (argv[1][i] > temp)
-			temp = argv[1][i];
-		i++;
-	}
-	srand(temp ^ 14);
-	password[3] = codex[rand() & 63];
-	temp = 0;
-	i = 0;
-	while (i < length)
-	{
-		temp += (argv[1][i] * argv[1][i]);
-		i++;
-	}
-	password[4] = codex[(temp ^ 239) & 63];
-	i = 0;
-	while (i < argv[1][0])
-	{
-		temp = rand();
-		i++;
-	}
-	password[5] = codex[(temp ^ 229) & 63];
-	password[6] = '\0';
-	printf("%s", password);
-	return (0);
+    return 0;
 }
