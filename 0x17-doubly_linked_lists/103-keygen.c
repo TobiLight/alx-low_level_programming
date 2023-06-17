@@ -6,16 +6,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void generate_password(int length, char *password, char *codex, char **argv)
 
+void generate_password(int length, char *password, char *codex, char **argv);
 
 /**
  * generate_password - Generate password
- * @temp: temp
- * @i: i counter
  * @length: length of argv
  * @password: password
  * @codex: codex password
+ * @argv: argument passed
  *
  * Return: nothing
  */
