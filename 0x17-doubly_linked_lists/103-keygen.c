@@ -14,9 +14,9 @@
  * @length: length of argv
  * @password: password
  * @codex: codex password
- * 
+ *
  * Return: nothing
-*/
+ */
 void generate_password(int length, char *password, char *codex, char **argv)
 {
 	int i, temp;
