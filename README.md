@@ -26,5 +26,5 @@ This repository contains programs written for the low-level programming and algo
 - **[0x15. C](./0x15-file_io/)** - File IO
 - **[simple_shell](https://github.com/TobiLight/simple_shell)** - Simple shell
 - **[0x00. Python](https://github.com/TobiLight/alx-higher_level_prgramming/0x00-python_hello_world)** - Hello, World
-- **[0x17-doubly_linked_lists](./0x17-doubly_linked_lists)** - Doubly Linked Lists
+- **[0x17 .C](./0x17-doubly_linked_lists)** - Doubly Linked Lists
 - **[0x18. C](./0x18-dynamic_libraries)** - Dynamic Libraries
