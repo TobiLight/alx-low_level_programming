@@ -9,7 +9,8 @@
  * hash_table_print - Prints a hash table
  * @ht: The hash table to print
  *
- * print the key/value in the order that they appear in the array of hash table.
+ * print the key/value in the order that they appear in the array of
+ * hash table.
  * Return: nothing
  */
 
