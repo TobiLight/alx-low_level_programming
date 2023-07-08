@@ -16,21 +16,11 @@
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	hash_table_t *hash_table;
-	unsigned long int hashed_key;
+	unsigned long int index;
+	unsigned long int hash;
 
-	hash_table = malloc(sizeof(hash_table));
-	if (hash_table == NULL)
-		return (NULL);
-	hash_table->array = malloc(sizeof(hash_table_t *) * size);
-	if (hash_table->array == NULL)
-	{
-		free(hash_table);
-		return (NULL);
-	}
-	hashed_key = hash_djb2(key);
-	hash_table->array[hashed_key] = NULL;
-	hash_table->size = size;
+	hash = hash_djb2(key);
+	index = hash % size;
 
-	return (hashed_key);
+	return (index);
 }
