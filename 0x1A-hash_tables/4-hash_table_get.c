@@ -22,6 +22,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
+	if (index >= ht->size)
+		return (NULL);
 	if (ht->array[index] == NULL)
 		return (NULL);
 	if (ht->array[index]->key == NULL || ht->array[index]->value == NULL)
