@@ -123,7 +123,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * shash_table_get - Retrieve the value associated with
+ * shash_table_get - Retrieves the value associated with
  *                   a key in a sorted hash table.
  * @ht: A pointer to the sorted hash table.
  * @key: The key to get the value of.
