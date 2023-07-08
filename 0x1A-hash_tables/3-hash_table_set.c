@@ -13,7 +13,6 @@
  *
  * Return: 1 if it succeeded, 0 otherwise
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *node, *temp, *head;
@@ -40,6 +39,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	node->next = ht->array[index];
 	ht->array[index] = node;
-	printf("%s", ht->array[index]->key);
+	free(head);
+	free(temp);
 	return (1);
 }
