@@ -1,5 +1,4 @@
 # Low-Level Programming - Data Structures, Algorithms, Linux/Unix System Programming
-
 This repository contains programs written for the low-level programming and algorithm track at the alx-SoftwareEngineering program facilitated by Holberton School.
 
 - **[0x00. C](https://github.com/TobiLight/alx-low_level_programming/tree/main/0x00-hello_world)** - Hello, World
