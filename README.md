@@ -28,3 +28,4 @@ This repository contains programs written for the low-level programming and algo
 - **[0x00. Python](https://github.com/TobiLight/alx-higher_level_prgramming/0x00-python_hello_world)** - Hello, World
 - **[0x17 .C](./0x17-doubly_linked_lists)** - Doubly Linked Lists
 - **[0x18. C](./0x18-dynamic_libraries)** - Dynamic Libraries
+- **[sorting algorithms][https://github.com/TobiLight/sorting_algorithms]** - Sorting Algorithms
