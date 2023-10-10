@@ -10,13 +10,13 @@ The "0x1E. C - Search Algorithms" project provides implementations of several fu
 ## Learning Objectives
 
 ### General
-
 * What is a search algorithm
 * What is a linear search
 * What is a binary search
 * What is the best search algorithm to use depending on your needs
-## Tasks
 
+
+## Tasks
 | Task | File |
 | ---- | ---- |
 | 0. Linear search | [0-linear.c](./0-linear.c) |
