@@ -1,4 +1,4 @@
-/**
+/*
  * File: 0-linear.c
  * Author: Oluwatobiloba Light
  */
@@ -15,7 +15,6 @@
  * Return: The first index where value is located else -1 if value is not
  *         present in array or if array is NULL.
  */
-
 int linear_search(int *array, size_t size, int value)
 {
 	size_t i;
