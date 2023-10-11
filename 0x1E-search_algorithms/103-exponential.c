@@ -6,32 +6,18 @@
 #include "search_algos.h"
 #include <math.h>
 
+/**
+ * mini - Compares two integers
+ * @a: Number
+ * @b: Number
+ *
+ * Return: The smallest integer.
+ */
 size_t mini(size_t a, size_t b)
 {
 	if (a <= b)
 		return a;
 	return b;
-}
-
-/**
- * print_array - Prints the elements of an array
- * @array: Pointer to the first element of the array to search in
- * @first: First of the array
- * @last: Last index of the array
- *
- * Return: nothing
- */
-void print_array(int *array, size_t first, size_t last)
-{
-	size_t i = 0;
-
-	for (i = first; i <= last; i++)
-	{
-		printf("%d", array[i]);
-		if (i < last)
-			printf(", ");
-	}
-	printf("\n");
 }
 
 /**
@@ -77,7 +63,6 @@ int binary_srch(int *array, size_t low, size_t high, int value)
  * Return: The first index where value is located else -1 if value is not
  *         present in array or if array is NULL
  */
-
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t bound = 1, prev, left, right;
