@@ -45,7 +45,7 @@ int binary_srch(int *array, size_t low, size_t high, int value)
 		for (i = low; i <= high; i++)
 			printf("%i%s", array[i], i == high ? "\n" : ", ");
 		if (array[middle] == value)
-			return (middle);
+			return ((int)middle);
 		else if (array[middle] < value)
 			low = middle + 1;
 		else
