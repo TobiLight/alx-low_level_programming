@@ -35,7 +35,7 @@ int min(int a, int b)
 int jump_search(int *array, size_t size, int value)
 {
 	size_t jump = sqrt(size), prev = 0, i;
-	
+
 	if (array == NULL || size == 0)
 		return (-1);
 
@@ -51,16 +51,15 @@ int jump_search(int *array, size_t size, int value)
 		if (prev >= size)
 			return (-1);
 	}
+
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, jump);
 
-	for (i = prev; i <= jump && i <size; i++)
+	for (i = prev; i <= jump && i < size; i++)
 	{
-		
-
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 
 		if (array[prev] == value)
-			break;
+			return (prev);
 		prev++;
 	}
 
