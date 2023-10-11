@@ -6,8 +6,6 @@
 #include "search_algos.h"
 #include "math.h"
 
-int linear_search(int *array, size_t size, int value);
-
 /**
  * min - Returns the minimum number between two numbers
  * @a: Number
@@ -37,11 +35,11 @@ int min(int a, int b)
 int jump_search(int *array, size_t size, int value)
 {
 	size_t jump = sqrt(size), prev = 0, i;
-
+	
 	if (array == NULL || size == 0)
 		return (-1);
 
-	while (array[prev] < value && jump < size)
+	while (array[prev] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 
@@ -49,16 +47,15 @@ int jump_search(int *array, size_t size, int value)
 			break;
 
 		prev = jump;
+		jump += sqrt(size);
 		if (prev >= size)
 			return (-1);
-		jump += sqrt(size);
 	}
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, jump);
 
-	for (i = prev; i <= jump; i++)
+	for (i = prev; i <= jump && i <size; i++)
 	{
-		if (prev >= size)
-			return (-1);
+		
 
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 
