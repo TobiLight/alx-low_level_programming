@@ -6,6 +6,23 @@
 #include "search_algos.h"
 #include "math.h"
 
+int linear_search(int *array, size_t size, int value);
+
+/**
+ * min - Returns the minimum number between two numbers
+ * @a: Number
+ * @b: Number
+ *
+ * Return: Smallest number
+ */
+
+int min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
 /**
  * jump_search - Searches for a value in a sorted array of integers using the
  *               Jump search algorithm.
@@ -19,35 +36,38 @@
 
 int jump_search(int *array, size_t size, int value)
 {
-	size_t jump = sqrt(size), prev = 0;
-
-	if (array == NULL || size == 0)
+	size_t jump = sqrt(size), prev = 0, i;
+	if (array == NULL)
 		return (-1);
 
-	while (array[prev] < value && jump < size)
+	while (array[prev] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 
-		
+		if (array[jump] >= value || jump >= size)
+			break;
 
 		prev = jump;
+		if (prev >= size)
+			return (-1);
 		jump += sqrt(size);
 	}
-
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, jump);
-
-	if (jump >= size)
-		jump = size - 1;
-
-	while (prev <= jump)
+	
+	for (i = prev; i <= jump; i++)
 	{
+		if (prev >= size)
+			return (-1);
 
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 
 		if (array[prev] == value)
-			return (prev);
+			break;
 		prev++;
 	}
 
+	if (array[prev] == value)
+		return (prev);
+	
 	return (-1);
 }
