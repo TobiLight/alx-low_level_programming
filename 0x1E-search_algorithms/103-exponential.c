@@ -6,6 +6,9 @@
 #include "search_algos.h"
 #include <math.h>
 
+size_t mini(size_t a, size_t b);
+int binary_srch(int *array, size_t low, size_t high, int value);
+
 /**
  * mini - Compares two integers
  * @a: Number
