@@ -62,7 +62,7 @@ int exponential_search(int *array, size_t size, int value)
 		printf("Searching in array: ");
 		middle = floor((left + right) / 2);
 		print_array(array, left, right);
-		
+
 		if (array[middle] == value)
 			return (middle);
 		else if (array[middle - 1] < value)
