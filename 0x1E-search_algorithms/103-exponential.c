@@ -16,15 +16,16 @@
 size_t mini(size_t a, size_t b)
 {
 	if (a <= b)
-		return a;
-	return b;
+		return (a);
+	return (b);
 }
 
 /**
- * binary_search - Searches for a value in a sorted array of integers using
+ * binary_srch - Searches for a value in a sorted array of integers using
  *                 the Binary search algorithm.
  * @array: Pointer to the first element of the array to search in
- * @size: The number of elements in array
+ * @low: Lower bound index
+ * @high: Upper bound index
  * @value: The value to search for
  *
  * Return: Tthe index where value is located else -1 if value is not present
