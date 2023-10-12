@@ -6,7 +6,7 @@
 #include "search_algos.h"
 
 /**
- * jump_list - Searches for a value in a sorted singly linked list of
+ * linear_skip - Searches for a value in a sorted singly linked list of
  *             integers using linear skip algo.
  * @list: A pointer to the  head of the linked list to search.
  * @value: The value to search for.
