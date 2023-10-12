@@ -7,8 +7,8 @@
 #include <math.h>
 
 /**
- * jump_list - Searches for a value in a sorted list of integers using the
- *             Jump search algorithm.
+ * jump_list - Searches for a value in a sorted singly linked list of integers
+ *             using the Jump search algorithm.
  * @list: Pointer to the head of the list to search in
  * @size: The number of nodes in list
  * @value: The value to search for
