@@ -7,33 +7,34 @@
 
 /**
  * jump_list - Searches for a value in a sorted singly linked list of
- *             integers using jump search.
+ *             integers using linear skip algo.
  * @list: A pointer to the  head of the linked list to search.
- * @size: The number of node in the list.
  * @value: The value to search for.
  *
  * Return: If the value is not present or the head of the list is NULL, NULL.
  *         Otherwise, a pointer to the first node where the value is located.
  */
-listint_t *jump_list(listint_t *list, size_t size, int value)
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	size_t step, jump_size;
-	listint_t *curr, *jump;
+	skiplist_t *curr, *jump;
 
-	if (list == NULL || size == 0)
+	if (list == NULL)
 		return (NULL);
 
-	step = 0;
-	jump_size = sqrt(size);
-	for (curr = jump = list; jump->index + 1 < size && jump->n < value;)
+	for (curr = jump = list; jump->next != NULL && jump->n < value;)
 	{
 		curr = jump;
-		for (step += jump_size; jump->index < step; jump = jump->next)
+		if (jump->express != NULL)
 		{
-			if (jump->index + 1 == size)
-				break;
+			jump = jump->express;
+			printf("Value checked at index [%ld] = [%d]\n",
+				   jump->index, jump->n);
 		}
-		printf("Value checked at index [%ld] = [%d]\n", jump->index, jump->n);
+		else
+		{
+			while (jump->next != NULL)
+				jump = jump->next;
+		}
 	}
 
 	printf("Value found between indexes [%ld] and [%ld]\n",
